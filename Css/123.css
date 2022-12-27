@@ -1,0 +1,708 @@
+
+
+
+
+
+
+
+/*style="position: fixed; bottom: 0; width: 100%;"*/
+
+
+
+
+
+
+.navbar{/* next four - navigation bar at top */
+	background-color:#030506 ; /* as long as bg img is used no color needed here  */
+	/*background-image: url('../Resources/images/003.jpg'); not used now */
+	width:100%;
+	height:52px;
+	text-decoration:none;
+   border-bottom-right-radius: 25px;
+   outline: none;
+   border-width: 0px;
+   border-bottom-style: solid;
+	padding-left: inherit;
+	padding-right: inherit;
+	margin: 0;
+   box-shadow:  0 0 15px #7a7a52;
+   display: inline-block;
+ }
+.navtxt {
+	 text-align: center;
+	color:#f2f2f2;
+	text-align:center;
+	padding: 2px;
+	margin: 10px;
+	object-fit: cover;
+	margin-left : 48%;
+	margin-right:  48%;
+	font-size:24px;
+	text-decoration:none;
+	border-radius: 5px;
+	position: absolute;
+} 
+
+.navbar a {
+	float:left;
+	color:#f2f2f2;
+	text-align:center;
+	padding: 14px 16px;
+	font-size:24px;
+	text-decoration:none;
+	border-radius: 5px;
+	position: relative;
+}
+
+.navbar a:hover {
+	color:#ddd;
+	background-color:#6F6A6F;
+	text-decoration:none;
+	transform: scale(1.05) ;
+}
+
+.navbar a.active{
+	background-color:#04AA6D;
+	color:white;
+	text-decoration:none;
+}/* navigation ends */
+
+.actives{
+	background-color: #5b575b;
+}
+
+#switch {
+	font-size:20.56px ;
+	float: right;
+	border-bottom-right-radius: 25px;
+}
+		
+
+
+/* */
+.cont{/* main container - used in many pages - this and next two used in home-index and home novel as is */
+	width: device-width;
+	height:100;
+	margin: 20px;
+	padding: 10px;
+	background-color: yellow;
+	color: inherit;
+	position: relative;
+}
+ 
+.cont_inside_cont{
+	width: 30%;
+	height:20%;
+	margin:20px;
+	background-color: red;
+	color: inherit;
+	display:flex;
+	
+	flex-wrap: wrap;
+	border-radius: 15px;
+	padding: 5px;
+  
+	cursor: pointer;
+	box-shadow: 0 0 10px #d6d6c2;
+}
+
+.cont_inside_cont_img > img{
+	width:100%;
+	height: auto;
+	justify-content: center;
+	border-radius:15px ;
+	border-width: 1px;
+	padding-bottom: 4px;
+	padding-right: inherit;
+	padding-left: inherit;
+}
+
+
+.contH{/* main container - used in many pages - this and next two used in home-index and home novel as is */
+	width: 100%;
+	margin: 20px;
+	padding: 10px;
+	background-color: inherit;
+	color: inherit;
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: flex;
+	justify-content: center;
+   text-align: center;
+	position: relative;
+}
+
+.cont_inside_contH{
+	width: 60%;
+	height:20%;
+	margin:20px;
+	margin-top:5px ;
+	margin-bottom: 0px;
+	background-color: inherit;
+	color: inherit;
+ 
+	border-radius: 15px;
+	padding: 5px;
+	justify-content: center;
+	text-align: center; 
+	padding: relative;
+	cursor: pointer;
+	box-shadow: 0 0 10px #d6d6c2;
+}
+
+.cont_inside_cont_Himg > img{
+	width:100%;
+	height: auto;
+	justify-content: center;
+	object-fit: cover;
+	border-radius:15px ;
+	border-width: 1px;
+	padding-bottom: 4px;
+	padding-right: inherit;
+	padding-left: inherit;
+}
+ .drpshow { /* drop down stuff */
+ 	display: none;
+ }
+
+
+.cont_e_main{
+	 width: device-width;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+	background-color: inherit;
+	color: inherit;
+   
+ 
+}
+
+.vid0{
+	width: device-width;
+	height: 100%;
+	margin: 10;
+	position: relative;
+	background-color:  inherit;
+	color: inherit;}
+.vid1{
+	width: 60%;
+	float: right;
+	margin: 10px	;
+	margin-right:40px ;
+	border-radius: 15px;
+	position: relative;
+	background-color:  inherit;
+	color: inherit;
+
+	box-shadow:  0 0 20px 5px #d6d6c2;
+}
+.vid2{
+	width :100%;
+  border:5px;
+	aspect-ratio: 16/9;
+	justify-content: center;
+	align-items: center;
+	background-color:  inherit;
+	color: inherit;
+}
+
+.vid_tools{
+	width: 100%;
+	margin: 1px;
+ 
+	border-bottom-right-radius: inherit;
+	border-bottom-left-radius:inherit ;
+	aspect-ratio: 10/1;
+		background-color:  inherit;
+	color: inherit;
+}
+.cont_e2{/* main container - used in many pages - this and next two used in home-index and home novel as is */
+	width: 450px;
+	margin: 10px;
+  height: 300px;
+
+	background-color:  red;
+	color: inherit;
+	display: flex;
+ 
+	justify-content: center;
+   text-align: center;
+	position: relative;
+}
+.cont_e1{
+	width: 90% ;
+	margin: 10px;
+
+	background-color: orange;
+	color: inherit;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+   text-align: center;
+	position: relative;
+}
+.cont_e   {
+	width: 90% ;
+	 margin: 10px;
+  position: absolute;
+	background-color: inherit;
+	color: inherit;
+  display: block;
+	border-radius: 10px;
+ 
+	justify-content: center;
+	text-align: center; 
+  
+	cursor: pointer;
+	box-shadow: 0 0 10px 5px #d6d6c2;
+}
+.abc{
+		   width: 100%;
+	      overflow: hidden;
+	     background-color: inherit;
+	     display: inline-block;
+	     text-align: center;
+	     text-overflow: ellipsis;
+}
+/*
+.cont_e{
+	width:92%;
+	height: auto;
+	margin: 5px;
+	justify-content: center;
+	border-radius:5px;
+ 
+  background-color: inherit;
+  color: inherit;
+ 
+  	box-shadow: 0px 0px 15px 5px #d6d6c2;
+}
+
+.cont_e2{
+	width: 20vw;
+	height: 20vh;
+ 
+	margin: 5px;
+	 
+	 
+	background-color: pink;
+	color: inherit;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+   text-align: center;
+	position: relative;
+}
+ */
+
+ 
+.font_for_header{
+	font-family: "Helvetica";
+	letter-spacing: 1px;
+}
+.font_for_cont{ /* as name suggests font styling - used in home - index,novel; and some other place */
+	font-family:"vivaldi";
+	font-weight: 15;
+	font-style: italic;
+	position: relative;
+
+
+}
+
+.supported{
+	border-radius: 10px;
+	background-color: #d9d9d9;
+   position:absolute;
+	margin: 25px;
+	padding: 10px;
+	bottom: -199px;
+   display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+}
+
+.highlight  {
+	background-color: #ddffcc;
+    text-align: center;
+	border-radius: 10px;
+	margin: 10px;
+	 
+	padding: 10px;
+}
+
+.uploadecho_error{
+	font-family: sans-serif;
+	margin: 20px;
+	padding: 10px;
+	border-radius: 5px;
+   border-left: 3px solid #ff3333;
+	box-shadow: inset 0 0 999px #ffb3b3;
+	color: inherit;
+}
+
+.uploadecho_success{
+	font-family: sans-serif;
+	margin: 20px;
+	padding: 10px;
+	border-radius: 5px;
+   border-left: 3px solid #00cc00;
+	box-shadow: inset 0 0 999px #b3ffb3;
+	color: inherit;
+}
+
+{
+	scroll-behavior: smooth;
+}
+
+
+/*  */
+/*
+@keyframes bdanim{
+ 0%{top: 160px;
+ 	width: 100px;
+ 	height: 100px;
+ 	position: fixed;
+ 	background-color: green;
+ 	border-radius: 20px;
+ 	transform: rotate(45deg);
+ 	margin-left: 30px;
+ 	margin-top:-20px ;
+
+ }
+ 25%{
+ 	 left: 200px;
+ }
+ 45%{
+ 	 left: 450px;
+ }
+
+ 50%{top: 560px;
+ 		width: 100px;
+ 	height: 100px;
+ 	position: fixed;
+
+ 	background-color: green;
+ 	 	border-radius: 20px;
+ 	transform: rotate(450deg);
+ }
+ 65%{
+ 	left: 450px;
+ }
+ 75%{
+ 	left: 200px;
+ }
+ 100%{top: 160px;
+ 	width: 100px;
+ 	height: 100px;
+ 	position: fixed;
+ 	background-color: green;
+ 	 	border-radius: 20px;
+ 	transform: rotate(45deg);
+ 	margin-left: 30px;
+ 	margin-bottom:2vh ;
+ }
+
+}
+
+.bdani{
+	animation-name: bdanim;
+	position: relative;
+	animation-duration:  10s;
+	width: 100%;
+	height:available;
+ animation-direction: alternate;
+	z-index: -99;
+ 
+	animation-iteration-count: infinite;
+
+}*/
+
+@keyframes myanim{ /* used in class 'my' - achieves the slide-down & settle effect  */
+	0%{
+		top: -60px;
+
+	}
+
+
+	50%{
+		top: 0px;
+	 
+	}
+}
+ 
+
+ 
+.my{ /* used in class 'my' - achieves the slide-down & settle effect - animation name "myanim"  */
+	animation-name: myanim;
+	position: relative;
+	animation-duration: 4s;
+	width: 100%;
+	height:available;
+	animation-direction: alternate;
+}
+ 
+
+.unselectable{ /* unselectable text , form, link etc.. */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+      /* this and 'white' after this used in darkmode effect  */
+.dark {
+	--bg:#333136;
+   --fg: #EAE7F2;
+   _c2: #a3c2c2; /* supposedly for novel list page but not workin */
+}
+
+.light {
+	--bg:#E6F2F6;
+   --fg:#100725;
+}
+
+body{ /* use the variable */
+	background-color: var(--bg);
+   color: var(--fg);
+   margin: 0 auto;
+   transition-duration: 1s;
+    
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+footer{
+
+	background-color:#393739;
+	color:#E4DFEE;
+	height: ???px;
+	padding: 5px;
+	font-size: 10px;
+	box-shadow:  0 0 15px #7a7a52;
+	letter-spacing: 2px;
+	font-family:"Helvetica";
+}
+
+
+
+
+.passwd{ /* password content main container - needs improvement */
+	 width: 100%;
+	 margin: 0 auto;
+	 padding-top:10% ;
+	 display:flex;  
+	 justify-content: center;
+	 position: relative;
+	}
+
+.passwd_cl{
+	width:60%;
+	position: absolute;
+	text-align: center;
+	border-radius: 1px;
+	display: block;
+	justify-content: center;
+	padding: 20px;
+   border-radius: 15px 0 15px 0;
+	box-shadow: 0 0 10px  #d6d6c2;
+	outline: none;
+	border: none;
+	resize: none;
+}
+
+.passbtn{ /* enter button on pass page */
+	width: 90px;
+	height: 20px;
+	background-color: #5cd65c;
+	color: inherit;
+	border-radius: 5px; margin: auto;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	resize: none;
+}
+
+.passbtn:hover {
+	background-color: #47d147;
+}
+
+.passst{ /*   */
+	margin: 5px;
+	border-radius: 0 10px 0 10px;
+}
+
+
+
+textarea:focus , input:focus { /* for removing black border on password page - php  */
+	outline: none;
+}
+
+.movie{ /* pretty sure its obsolete */
+	width: 60px;
+	height: 20vh;
+}
+
+ .for_novel_read{
+ 	font-family: "arial" ;
+ 	object-fit: cover;
+ 	width: 80%;
+ 	margin: 10%;
+ 
+ }
+
+ 
+.novel_tool{
+	position: fixed;
+	width:100%;
+	height: 120px;
+	bottom: 0px;
+	border-top-left-radius:20px ;
+	border-top-right-radius: 20px;
+	background-color:dimgrey;
+	color: lightgoldenrodyellow;
+	animation-name: noveltool;
+ animation-duration: 1s;
+ z-index:60 ;
+ 
+}
+
+@keyframes noveltool {
+	0%{
+		bottom: -120px;
+	}
+ 
+	100%{
+		bottom: 0px;
+	}
+}
+
+@keyframes close_tools{
+		0%{
+		bottom: -120px;
+	}
+  50%{
+  	bottom: -60px;
+  }
+	100%{
+		bottom: 16px;
+	}
+}
+ 
+
+
+.bac_2_top {/* novel back to top button */
+	display:  none;
+	animation-name: close_tools;
+   animation-duration: 0.75s;
+}
+
+  .shw {/* novel back to top button */
+  display:  block;/* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 16px; /* Place the button at the bottom of the page */
+  right: 16px; /* Place the button 30px from the right */
+  z-index:99 ; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+   cursor: pointer; /* Add a mouse pointer on hover */
+   background-color: inherit;
+   color: inherit;
+   animation-name: close_tools;
+   animation-duration: 0.75s;
+  padding: ; /* Some padding */
+  /* Rounded corners */
+  font-size:24px ; /* Increase font size */
+ 
+ }
+
+ 
+ 
+ .cont_inside_cont_upl{ /* for uploads page */
+	width: 80%;
+	height:20%;
+	margin:20px;
+	background-color: inherit;
+	color: inherit;
+	padding: 5px;
+	border-radius: 0px 0px 10px 0px ;
+	justify-content: center;
+	text-align: center; 
+	padding: relative;
+	cursor: pointer;
+	border-width: 5px;
+	border-left: solid;
+	box-shadow: inset 0 0 100px #d6d6c2;
+}
+
+.drpshow.new{ /* drop down stuff */
+	display: block;
+	float:left;
+	color:inherit;
+	background-color:#1a1a1a;
+	text-align:center;
+	top:54px;
+	left:80px;
+	padding: 10px;
+	border-radius: 10px;
+	font-size:14px;
+	text-decoration:none;
+	position: absolute;
+	z-index: 99;
+	opacity: 1;
+	transition-duration: 2s;
+}
+ 
+}
+.new3{ /* for the sake of fixing double click for js onclick */
+	outline: none;
+}
+
+@keyframes myanim2{ /* used in class 'my2' - achieves the slide-down & settle effect for drop down  */
+ 0%{
+ 	top: 50px;
+ }
+ 
+	100%{
+		top: 54px;
+	 
+	}
+}
+ 
+
+ 
+.my2{ /* used in class 'my2' - achieves the slide-down & settle effect - animation name "myanim"  */
+	animation-name: myanim2;
+	position: relative;
+	animation-duration: 0.5s;
+	width:auto;
+	height:available;
+}
+
+.abt_link:link{
+	color: inherit;
+
+} 
+.abt_link:visited{
+	color: inherit;
+}
+ 
+ .link{
+ 	text-decoration: none;
+ 		color: inherit;
+ }
+.link:visited{
+	color: inherit;
+}
+.creat{
+ margin: 20px;
+ box-shadow:0 0 15px #7a7a52 ;
+ height: 300px;
+}
+.creat_font_hd{
+	text-align: center;
+	 
+	font-size: 36;
+}
