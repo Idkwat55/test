@@ -4,6 +4,11 @@
  
  <?php include 'header.php';?>
 
+<script>
+document.getElementById('home_btn').classList.add('actives');
+
+</script>
+
 <div id="stupid"></div>
  
       <!--  font-->     
@@ -60,5 +65,5 @@
 </div>
    
  
-  <?php include 'footer.php';?>
+<?php include 'footer.php';?>
 

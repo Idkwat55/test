@@ -7,6 +7,8 @@
 <script type="text/javascript">
    window.onload= function(){
       document.getElementById('hov1').classList.add('actives');
+ 
+      document.getElementById('dropdown2').classList.add('actives');
    }
 </script>
 

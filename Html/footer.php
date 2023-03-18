@@ -1,5 +1,5 @@
-. 
-<footer> 
+
+<footer id="footer"> 
 
 <p style="text-align: center;"> 
       This is a work of 
@@ -13,7 +13,8 @@
 
 </footer>
 
-<script type="text/javascript" src="../script/common.js" ></script>  
+<script type="text/javascript" src="../script/common.js" ></script>
+<script src="../script/upload.js"></script>  
 
 </body>
 

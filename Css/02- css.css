@@ -9,7 +9,9 @@
 
 
 
-
+:root{
+	--acc-sign-blr:#ff8080;
+}
 
 
 .navbar{/* next four - navigation bar at top */
@@ -18,12 +20,14 @@
 	width:100%;
 	height:52px;
 	text-decoration:none;
-   border-bottom-right-radius: 25px;
+ border-bottom-right-radius: 10px;
+ border-bottom-left-radius: inherit;
    outline: none;
    border-width: 0px;
    border-bottom-style: solid;
 	padding-left: inherit;
 	padding-right: inherit;
+	margin: 0;
    box-shadow:  0 0 10px 0px #1a2a33;
    display: inline-block;
  }
@@ -34,6 +38,7 @@
 	padding: 2px;
 	margin: 10px;
 	object-fit: cover;
+	cursor: pointer;
 	margin-left : 48%;
 	margin-right:  48%;
 	font-size:24px;
@@ -67,15 +72,71 @@
 }/* navigation ends */
 
 .actives{
-	background-color: #5b575b;
+	border-width: 0 0 2px 0 ;
+	border-color: antiquewhite;
+	border-style:  solid;
 }
 
-#switch {
-	font-size:20.56px ;
-	float: right;
-	border-bottom-right-radius: 25px;
+#home_btn{
+		border-bottom-left-radius:inherit ;
+
 }
-		
+#switch {
+ 
+	float: right;
+
+}
+
+#account{
+	border-bottom-right-radius:inherit ;
+	border-width: 0 0 2px 0 ;
+	border-color:	 var(--acc-sign-blr);
+	border-style:  solid;
+ 
+	float: right;
+}
+.accountCl {
+  height: 10em;
+  width: 15em;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px #d5d5e5;
+  margin: 4em auto;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputBar {
+margin: 0.5em;
+padding: 0.5em;
+border-radius: 5px;
+background-color: #f2f2f2;
+border: 1px solid #ccc;
+outline: none;
+text-decoration: none;
+text-align: center;
+width: 80%;
+}
+
+.signInBtn {
+border: none;
+outline: none;
+font-size: 1em;
+border-radius: 15px;
+margin: 0.5em;
+padding: 0.5em 2em;
+text-decoration: none;
+background-color: #4CAF50;
+color: #fff;
+box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.signInBtn:hover {
+cursor: pointer;
+background-color: #3e8e41;
+}
 
 
 /* */
@@ -92,9 +153,9 @@
 	position: relative;
 }
 .dummy_cont{
-	width: device-width;
-	margin: 20px;
-	padding: 10px;
+	width:                                                                                                                                                                                                                                          ;
+	margin: 10px;
+	padding: 5px;
 	background-color: inherit;
 	color: inherit;
 	display: flex;
@@ -106,7 +167,7 @@
 .cont_inside_cont{
 	width: 480px;
 	height:18%;
-	margin:20px;
+	margin:10px;
 	background-color: inherit;
 	color: inherit;
  
@@ -116,21 +177,34 @@
 	text-align: center; 
 	padding: relative;
 	cursor: pointer;
-	box-shadow: 0 0 10px 0px #d6d6c2;
+	box-shadow:var(--bsc);
 }
+
+.box-shadow0{
+   --bsc :0 0 10px 0px #d6d6c2;
+}
+
+.box-shadow1{
+	   --bsc :0 0 10px 0px black;
+}
+
 .font{
 	font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji",SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono", "Courier New", monospace;
 }
 .abc {
 	   width: 100%;
-	   margin: 0;
+	    
      overflow: hidden;
      display: inline-block;
      text-overflow: ellipsis;
-      
+      text-align: center;
      font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji",SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono", "Courier New", monospace;
-     font-size: 30;
+     
 
+}
+.abc_fix{
+	margin: 0;
+	font-size: 30;
 }
 
 .cont_inside_cont_img > img{
@@ -176,8 +250,10 @@
 	text-align: center; 
 	padding: relative;
 	cursor: pointer;
-	box-shadow: 0 0 10px #d6d6c2;
+	box-shadow:  0 0 10px #d6d6c2;
+ 
 }
+
 
 .cont_inside_cont_Himg > img{
 	width:100%;
@@ -195,40 +271,46 @@
  }
 
 
-.cont_e_main{
-		width: device-width;
-	margin: 5px;
-	padding: 10px;
-	background-color: inherit;
-	color: inherit;
-   
-   display: flex;
-   flex-wrap: wrap;
-	justify-content: center;
-   text-align: center;
+
+.vid0{
+	width: device-width;
+	height: 100%;
+	margin: 10;
 	position: relative;
+	background-color:  inherit;
+	color: inherit;}
+.vid1{
+	width: 60%;
+	float: right;
+	margin: 10px	;
+	margin-right:40px ;
+	border-radius: 15px;
+	position: relative;
+	background-color:  inherit;
+	color: inherit;
 
+	box-shadow:  0 0 20px 5px #d6d6c2;
 }
-
-.cont_e{  /* used in movies pg, cont for vid*/
- 	width:79.9%;
-	height:45%;
-	object-fit: cover;
-
-
-} 
-
-.cont_e1{  /* used in movies pg , cont for vid container*/
-	border-radius:15px ;
-	width:80%;
-	height:50%;
-	margin: 10px;
-	flex-wrap: wrap;
-	box-shadow: 0 0 10px #d6d6c2;
+.vid2{
+	width :100%;
+  border:5px;
+	aspect-ratio: 16/9;
 	justify-content: center;
-	padding:10px;
+	align-items: center;
+	background-color:  inherit;
+	color: inherit;
 }
 
+.vid_tools{
+	width: 100%;
+	margin: 1px;
+ 
+	border-bottom-right-radius: inherit;
+	border-bottom-left-radius:inherit ;
+	aspect-ratio: 10/1;
+		background-color:  inherit;
+	color: inherit;
+}
 .font_for_header{
 	font-family: "Helvetica";
 	letter-spacing: 1px;
@@ -383,16 +465,22 @@
 	-moz-user-select: none;
 	user-select: none;
 }
+
+
+
       /* this and 'white' after this used in darkmode effect  */
 .dark {
 	--bg:#333136;
    --fg: #EAE7F2;
+ 
+
    _c2: #a3c2c2; /* supposedly for novel list page but not workin */
 }
 
 .light {
 	--bg:#ECF0F1;
    --fg:#100725;
+ 
 }
 
 body{ /* use the variable */
@@ -408,18 +496,27 @@ body{ /* use the variable */
 
 footer{
 
-	background-color:#393739;
+	background-color:#030506;
 	color:#E4DFEE;
 	height: ???px;
 	padding: 5px;
 	font-size: 10px;
-	box-shadow:  0 0 15px #7a7a52;
+	box-shadow:  0 0 10px 0 #1a2a33;
 	letter-spacing: 2px;
 	font-family:"Helvetica";
 }
 
-
-
+.after{
+	font-size: 50px;
+}
+.like {
+	margin: 10px;
+	margin-left:30px ;
+	margin-top: 20px;
+	font-size: 30px;
+	cursor: pointer;
+  float: left;
+}
 
 .passwd{ /* password content main container - needs improvement */
 	 width: 100%;

@@ -38,11 +38,11 @@
       <a id="hov3" class="icon-lock" href="./manga-index.php"></a>
    </div>
 
-<a class="icon-upload3" href="./Uploads_html.php">  </a>
+<a id="upload_opt" class="icon-upload3" href="./Uploads_html.php">  </a>
 
  <p class="navtxt"  onclick= "window.open('./about.php' ,'_self') ">Sammlung</p> 
 
-<a id="switch" style="cursor: pointer;" onclick="switchTheme();" > <i class="icon-moon_sharp_icon"></i> </a>
+<a id="switch"  style="cursor: pointer;" onclick="switchTheme();" > <i class="icon-moon_sharp_icon"></i> </a>
      <!-- dark mode ^ -->
 </div>
 </div>

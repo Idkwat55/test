@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 $uploaded = [];
-$allowed = ['mp4', 'png','mkv','avi'];
+$allowed = ['mp4', 'png'];
 
 $succeeded = [];
 $failed = [];
@@ -14,13 +14,15 @@ if(!empty($_FILES['file'])){
 
 			$ext = explode('.', $name);
 			$ext = strtolower(end($ext));
-			
+			$file_name = $_FILES['file']['name'][$key];
 			$file = md5_file($temp) . time() . '.' . $ext;
+			$path = "Videos/";
 
-			if(in_array($ext, $allowed) === true && move_uploaded_file($temp, "Videos/{$file}") === true){
+			if(in_array($ext, $allowed) === true && move_uploaded_file($temp,$path.$file_name) === true){
+				$file = $_FILES['file']['name'][$key];
 				$succeeded[] = array(
 					'name' => $name,
-					'file' => $file
+					'file' => $file 
 				);
 			}else{
 				$failed[] = array(

@@ -7,6 +7,7 @@
    window.onload= function(){
       document.getElementById('hov2').classList.add('actives');
       document.getElementById('dropdown2').classList.add('actives');
+
    }
    
 </script>
@@ -21,10 +22,9 @@
     </ul>
  </div>
 -->
-<div  class='vid0   '>
-
-<section id="main">
-    <p class="abc"> <strong> Uploads </strong></p>
+ 
+<div class='vid0' >
+    <p class="abc"> <strong id="main"> Uploads </strong></p>
 <?php
 
 $dir = "../Resources/Movies/";
@@ -36,7 +36,7 @@ $dir = "../Resources/Movies/";
                  $fileName_aft =pathinfo($file, PATHINFO_FILENAME);
                 echo "
                  
-                <div class='vid1  '>  
+                <div class='vid1  ' id='".$file."'>  
                
                 <p class='abc'> ".$fileName_aft." </p>              
                 <video class='vid2    '  controls>
@@ -57,12 +57,12 @@ $dir = "../Resources/Movies/";
     }
 }
 ?>
-</section>
+ 
 
 
 
-<section id="user">
-    <p class="abc"> <strong>User Uploads    </strong></p>
+ 
+    <p class="abc"> <strong id="user">User Uploads    </strong></p>
 <?php 
 
 $dir = "../Uploads/Videos/";
@@ -75,7 +75,7 @@ $dir = "../Uploads/Videos/";
             if($file != '.' && $file != '..' && $FileType == 'mp4'|| $FileType == 'webm '){
                  $fileName_aft =pathinfo($file, PATHINFO_FILENAME);
                 echo "
-                <div class='vid1  '>  
+                <div class='vid1  ' id='".$file."'>  
                
                 <p class='abc'> ".$fileName_aft." </p>              
                 <video class='vid2    '  controls>
@@ -96,9 +96,9 @@ $dir = "../Uploads/Videos/";
 }
 
 ?>
-</section>
-
 </div>
+
+ 
 
 
 <?php include 'footer123.php';?>
