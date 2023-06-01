@@ -28,15 +28,15 @@ $date='M-d-y'; // date format
 $ignore=array('.','..','.htaccess','index.php','icon.php','Thumbs.db',$self); // ignore these files
 // End configs
 $root=dirname(__FILE__);
-$dir= '../Resources/Novel/Mard of Arcturus/'; 
-$path="$dir";
+$dir=isset($_GET['./'])?$_GET['./']:'';if(strstr($dir,'..'))$dir='';
+$path="$root/$dir/";
 $dirs=$files=array();
 if(!is_dir($path)||false==($h=opendir($path)))exit('Directory does not exist.');
 while(false!==($f=readdir($h)))
 {
 	if(in_array($f,$ignore))continue;
 	if(is_dir($path.$f))$dirs[]=array('name'=>$f,'date'=>filemtime($path.$f),'url'=>$self.'?dir='.rawurlencode(trim("$dir/$f",'/')));
-	else$files[]=array('name'=>$f,'size'=>filesize($path.$f),'date'=>filemtime($path.$f),'url'=>trim("$dir".rawurlencode($f),'/'));
+	else$files[]=array('name'=>$f,'size'=>filesize($path.$f),'date'=>filemtime($path.$f),'url'=>trim("$dir/".rawurlencode($f),'/'));
 }
 closedir($h);
 $current_dir_name = basename($dir);
@@ -48,7 +48,7 @@ $up_url=($up_dir!=''&&$up_dir!='.')?$self.'?dir='.rawurlencode($up_dir):$self;
 <head>
 	<meta name="viewport"
    content="width=device-width,initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../../Css/css.css"/>
+<link rel="stylesheet" type="text/css" href="../../Css/02- css.css"/>
 <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
 <script type="text/javascript" src="../../script/common.js" ></script>
@@ -100,7 +100,7 @@ function _head()
 	_tpg=Math.ceil((_files.length+_dirs.length)/_ppg);
 	idx.innerHTML='<div class="rounded gray" style="padding:5px 10px 5px 7px;color:#202020">' +
 		'<p class="left">' +
-			'<strong><?php print$current_dir_name==''?$sitename:$current_dir_name?></strong><?php print$dir!=''?'&nbsp;  ':''?><br />' + (_files.length+_dirs.length) + ' Chapters are available, ' + _s(_tsize) + ' total.' +
+			'<strong><?php print$current_dir_name==''?$sitename:$current_dir_name?></strong><?php print$dir!=''?'&nbsp; (<a href="'.$up_url.'">Back</a>)':''?><br />' + (_files.length+_dirs.length) + ' objects in this folder, ' + _s(_tsize) + ' total.' +
 		'</p>' +
 		'<p class="right">' +
 			'Sort: <span class="link" onmousedown="return _srt(\'name\');" id="sort_name">Name</span>, <span class="link" onmousedown="return _srt(\'type\');" id="sort_type">Type</span>, <span class="link" onmousedown="return _srt(\'size\');" id="sort_size">Size</span>, <span class="link" onmousedown="return _srt(\'date\');" id="sort_date">Date</span>' +
@@ -133,17 +133,53 @@ window.onload=function()
 </script>
 
 </head>
- 
-<?php if(!isset($HeaderInclu)){include 'header.php';
-$HeaderInclu =true ;}?>
+<body>
+<header>
+
+<div class="font_for_header">
+<div class="navbar">                             <!-- nav bar and its buttons -->
+ <a class="active icon-home" href="../../Html/home-index.html">   </a>
+
+<!-- drop down stuff -->
+<a onclick="dropdowns()" id="dropdown2"
+          class="new3 icon-burger_list_menu_navigation_icon"></a>
+
+     <div id="dropdown" class="drpshow my2" >
+      <a id="hov1" class="icon-books"  href=" ../../Html/home-novels.html"></a>
+      <a class="icon-film" href="../../Html/videos.php"></a>
+      <a class="icon-lock" href="../Manga/manga-index.php"></a>
+   </div>
+
+<a class="icon-upload3" href="../../Html/uploads html.html">  </a>
+<a id="switch" onclick="switchTheme();" > <i class="icon-moon_sharp_icon"></i> </a>
+     <!-- dark mode ^ -->
+</div>
+</div>
+
+</header>
 
 	<div id="idx"><!-- do not remove --></div>
 
 
- 
+<footer style="position: fixed; bottom: 0; width: 100%;"> 
 
-<?php include 'footer1.php';?>  
- 
+<p style="text-align: center;"> 
+      This is a work of 
+<strong> <a class="abt_link" href="../../Html/about_auth.html">Can't_Think_Of_One</strong></a>
+<i href="./about_auth.html" class="icon-external_link_line_icon"></i> 
+</p>
+<p style="text-align: center;">
+<a class="abt_link" href="../../Html/about.html">H-Indexing 
+</a> 
+<i class="icon-external_link_line_icon"></i>    &copy 2022</p>
 
+</footer>
 
- 
+<script type="text/javascript" src="../script/common.js" ></script>  
+
+</body>
+
+</div>
+</div>
+
+</html>

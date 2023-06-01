@@ -1,30 +1,25 @@
- 
 <head>
    <title>Novels | Sammlung</title>
+   <meta name="description"content="Novels Page : Sammlung - One Place for all your Entertainemt needs">
 </head>
 
-<?php include 'header.php';?>
+<?php if(!isset($HeaderInclu)){include 'header.php';
+$HeaderInclu =true ;}?>
 <script type="text/javascript">
-   window.onload= function(){
+   window.onload = function () {
       document.getElementById('hov1').classList.add('actives');
+
+      document.getElementById('dropdown2').classList.add('actives');
    }
 </script>
 
-<div class="cont">
+<div class="cont MainClasNov">
+   <section id="MainNovHom">
+      <div class="MainNovDiv" >
 
- 
- <div class="cont_inside_cont">
- 	    <p class="abc font">Mard Of Arcturus</p>
- 	<div class="cont_inside_cont_img">
- 		<img src="../Resources/images/0013.jpg"  onclick="listch()">
- 		
- 	</div>
- </div>
+      </div>
+   </section>
 </div>
 
- 
 
-<?php include 'footer1.php';?>
- 
-
- 
+<?php include 'footer1.php'; ?>
