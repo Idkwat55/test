@@ -1,0 +1,5 @@
+SQL PDO : 
+SQL.PHP :
+1. SQLERR:1049 -> SQLSTATE[HY000] [1049] ~ no databawse found /
+2.CSQ : 101 -> Custom SQL error ~ Connection failed /
+3. 

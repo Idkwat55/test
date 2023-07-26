@@ -86,7 +86,7 @@ if ($ContineFlg === (false || null)) {
                anchor = document.createElement('a');
                anchor.href = './videos.php#' + data.succeeded[x].name;
                anchor.innerText = data.succeeded[x].name;
-               anchor.target = '_blank';
+               anchor.target = '_self';
 
                succeeded.appendChild(anchor);
             }
@@ -144,7 +144,7 @@ if ($ContineFlg === (false || null)) {
                anchor = document.createElement('a');
                anchor.href = './videos123.php#' + data.succeeded[x].name;
                anchor.innerText = data.succeeded[x].name;
-               anchor.target = '_blank';
+               anchor.target = '_self';
 
                succeeded.appendChild(anchor);
             }

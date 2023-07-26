@@ -1,17 +1,19 @@
 <head>
   <title>Home | Sammlung</title>
-  <meta name="description"content="Home page of Sammlung - All your Entertainemt needs in one place">
+  <meta name="description" content="Home page of Sammlung - All your Entertainemt needs in one place">
 </head>
 
-<?php if(!isset($HeaderInclu)){include 'header.php';
-$HeaderInclu =true ;} ?>
+<?php if (!isset($HeaderInclu)) {
+  include 'header.php';
+  $HeaderInclu = true;
+} ?>
 
 <script>
   document.getElementById('home_btn').classList.add('actives');
 
 </script>
 
-<div id="stupid"></div>
+<span id="Go2Top" onclick="bac_2_func()" class="Go2Top icon-keyboard_arrow_up"></span>
 
 <!--  font-->
 <div class="cont">
@@ -22,7 +24,7 @@ $HeaderInclu =true ;} ?>
     <div class="font TitleMain">
       <h1>Novels</h1>
       <p> Try out our Novels Site! </p>
-      <button id="btn1" class="SecBtn "   onclick="novl()">
+      <button id="btn1" class="SecBtn " onclick="novl()">
         <p style="margin:0px; padding:2px;opacity:1;">Try Now!</p>
       </button>
     </div>
@@ -41,7 +43,7 @@ $HeaderInclu =true ;} ?>
     <div class="font TitleMain">
       <h1>Media</h1>
       <p> Try out our Media Site! </p>
-      <button id="btn2" class="SecBtn"  onclick="movi()">Try Out Now!</button>
+      <button id="btn2" class="SecBtn" onclick="movi()">Try Out Now!</button>
 
       <p style="margin:0px; padding:2px;">Try Now!</p>
       </button>
@@ -64,7 +66,7 @@ $HeaderInclu =true ;} ?>
     <div class="font TitleMain">
       <h1>Manga</h1>
       <p> Try out our Manga Site! </p>
-      <button id="btn2" class="SecBtn "  onclick="manga()">
+      <button id="btn2" class="SecBtn " onclick="manga()">
         <p style="margin:0px; padding:2px;">Try Now!</p>
       </button>
     </div>
@@ -84,7 +86,7 @@ $HeaderInclu =true ;} ?>
   </section>
 
 
-  <section id="sec4" class="SectionBg " style="background-image:url('../Resources/images/0028.jpg');">
+  <section id="sec4" class="SectionBg " style="background-image:url('../Resources/images/0028.jpg'); ">
 
     <div class="font TitleMain">
       <h1>Graphical</h1>

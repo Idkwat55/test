@@ -68,7 +68,10 @@
 }/* navigation ends */
 
 .actives{
-	background-color: #5b575b;
+	 border-width: 0 0 3px 0 ;
+	 border-color: antiquewhite;
+	 border-style:  solid;
+ 
 }
 
 #switch {
@@ -258,12 +261,12 @@
 	box-shadow: 0 0 10px 5px #d6d6c2;
 }
 .abc{
-		   width: 100%;
-	      overflow: hidden;
-	     background-color: inherit;
-	     display: inline-block;
-	     text-align: center;
-	     text-overflow: ellipsis;
+			   width: 100%;
+		     overflow: hidden;
+		     background-color: inherit;
+		     display: inline-block;
+		     text-align: center;
+		     text-overflow: ellipsis;
 }
 /*
 .cont_e{
@@ -481,7 +484,7 @@ footer{
 	height: ???px;
 	padding: 5px;
 	font-size: 10px;
-	box-shadow:  0 0 15px #7a7a52;
+	box-shadow:  0 0 10px 0  #7a7a52;
 	letter-spacing: 2px;
 	font-family:"Helvetica";
 }

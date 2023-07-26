@@ -6,9 +6,9 @@ foreach(glob($dir.'/*.*') as $file){
 	 	print $file ->getFilename() . "\n";
 	 }
 } */
-$dir = "../Resources/images/"
-$files = scandir($dir)
-echo ".$files."
+$dir = "../Resources/images/";
+$files = scandir($dir);
+echo ".$files.";
 
 ?>
 <p> gsgdsgdbx</p>

@@ -1,6 +1,14 @@
  <?php include '../header.php';?>
 
 <button  onclick="bac_2_func()"  class="icon-circle-up bac_2_top" id="bac_2" ></button>
+<head>
+    <title> Sammlung | Mard Of Arcturus </title>
+</head>
+
+<script>
+document.getElementById('hov1').classList.add('actives');
+document.getElementById('dropdown2').classList.add('actives');
+</script>
 
 
 <div id="fontsi" class="for_novel_read">

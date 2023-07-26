@@ -9,11 +9,14 @@
 
 .navbar {
 	/* next four - navigation bar at top */
-	background-color: #030506;
+	/*background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 255, 0, 0.6) 50%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 255, 0, 0.2) 100%);
+*/
+	background-color: #000000;
 	/* as long as bg img is used no color needed here  */
 	/*background-image: url('../Resources/images/003.jpg'); not used now */
 	min-width: 100vw;
 	height: 52px;
+
 	text-decoration: none;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: inherit;
@@ -50,6 +53,7 @@
 	padding: 14px 16px;
 	font-size: 24px;
 	text-decoration: none;
+	display: block;
 	border-radius: 5px;
 	position: relative;
 }
@@ -91,23 +95,48 @@
 	border-width: 0 0 2px 0;
 	border-color: var(--acc-sign-blr);
 	border-style: solid;
-   
+
 	float: right;
 }
-.accountClCenter{
+
+.accountClCenter {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 6em;
 }
-.signUpBtn{
+
+.accountCl {
+	height: 16em;
+	width: 26em;
+	border-radius: 10px;
+	background-color: var(--AccBG);
+	box-shadow: 0px 0px 0.5em 0px var(--BoxShaCo);
+	flex-direction: column;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-duration: 1.5s;
+	z-index: 0.7;
+	text-align: center;
+}
+
+
+.inputBar {
+	margin-bottom: 1em;
+}
+
+
+
+.signUpBtn {
 	border: none;
 	outline: none;
 	font-size: 1em;
 	border-radius: 0.31em;
 	margin: 0.5em;
-	padding: 0.5em ;
+	padding: 0.5em;
 	text-decoration: none;
 	background-color: var(--SignUpBtnBg);
 	color: #fff;
@@ -118,43 +147,31 @@
 .signUpBtn:hover {
 	cursor: pointer;
 	background-color: var(--SignUpBtnHov);
+	transition-duration: 1s;
 }
 
 
-.accountCl {
-	height: 12em;
-	width: 24em;
-	border-radius: 10px;
-	background-color: var(--AccBG);
-	box-shadow: 0px 0px 0.5em 0px var(--BoxShaCo);
-	flex-wrap: wrap;
-	flex-direction: row;
-	padding: 2em;
-	display: flex;
-	 
-	justify-content: center;
-	align-items: center;
-	transition-duration: 1.5s;
-	z-index: 0.7;
-}
-.TESTONE{
+
+
+.TESTONE {
 	width: 600px !important;
 	height: 500px !important;
-	position: absolute!important;
-	float: center!important;
-	display: block!important;
-	background-color: yellow!important;
-	z-index: 999!important;
-	opacity: 1!important;
+	position: absolute !important;
+	float: center !important;
+	display: block !important;
+	background-color: yellow !important;
+	z-index: 999 !important;
+	opacity: 1 !important;
 }
 
-.responseBox1{
-	max-width: 80%;
-	 
-    margin: 1vm;
-	border-radius: 5px;
+.responseBox1 {
+	width: auto;
+	transition-duration: 1.5s;
+	box-shadow: 0px 0px 0.5em 0px var(--BoxShaCo);
+	margin: 1em;
+	border-radius: 0.5em;
 	padding: 0.5em;
-	background-color: inherit;
+	background-color: var(--AccBG);
 }
 
 
@@ -176,6 +193,7 @@
 }
 
 .signInBtn {
+
 	border: none;
 	outline: none;
 	font-size: 1em;
@@ -187,9 +205,11 @@
 	color: #fff;
 	box-shadow: var(--BoxShaCo);
 	transition-duration: inherit;
+
 }
 
 .signInBtn:hover {
+	transition-duration: 1s;
 	cursor: pointer;
 	background-color: var(--SignInBtnHov);
 }
@@ -202,7 +222,7 @@
 	width: 13em;
 	height: 4em;
 	border-radius: 10px;
-    background-color: var(--SecBtnBg);
+	background-color: var(--SecBtnBg);
 	color: var(--SecBtnCol);
 	border: none;
 	outline: none;
@@ -211,12 +231,13 @@
 	overflow: hidden;
 	cursor: pointer;
 	text-align: center;
-    font-weight: bolder;
+	font-weight: bolder;
 	transition-duration: 1.1s;
 }
+
 .SecBtn:hover {
 	background-color: var(--SecBtnBgHov);
-	color:var(--SecBtnCol) ;
+	color: var(--SecBtnCol);
 	transition-duration: 0.5s;
 
 }
@@ -227,7 +248,10 @@
 	.SecBtn {
 		right: -75%;
 	}
-	.MainClasNov{
+
+
+
+	.MainClasNov {
 		width: 70%;
 	}
 }
@@ -236,7 +260,10 @@
 	.SecBtn {
 		right: -70%;
 	}
-	.MainClasNov{
+
+
+
+	.MainClasNov {
 		width: 60%;
 	}
 
@@ -246,7 +273,9 @@
 	.SecBtn {
 		right: -65%;
 	}
-	.MainClasNov{
+
+
+	.MainClasNov {
 		width: 100% !important;
 	}
 }
@@ -256,7 +285,10 @@
 		right: -55%;
 
 	}
-	.MainClasNov{
+
+
+
+	.MainClasNov {
 		width: 100%;
 	}
 
@@ -320,10 +352,10 @@
 }
 
 
-.MainClasNov{
-	width:70%;
+.MainClasNov {
+	width: 70%;
 	float: right;
-	background-color: red ;
+	background-color: red;
 	height: auto;
 	margin: auto;
 
@@ -331,7 +363,7 @@
 
 /* */
 .cont {
-	max-width:100%;
+	max-width: 100%;
 	margin: 2vw;
 	padding: 1vw;
 	display: flex;
@@ -339,6 +371,7 @@
 	justify-content: center;
 	position: relative;
 }
+
 /*
 .dummy_cont {
 	width: 90%;
@@ -390,14 +423,7 @@
 
 }
 
-.abc {
-	width: 100%;
-	overflow: hidden;
-	display: inline-block;
-	text-overflow: ellipsis;
-	text-align: center;
-	font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+
 
 .abc_fix {
 	margin: 0;
@@ -473,31 +499,75 @@
 	margin-bottom: 5px;
 }
 
-.vid0 {
-	max-width: 100vw;
-	height: 100%;
-	margin: 10px;
-	position: relative;
-	background-color: inherit;
-	color: inherit;
-}
-
-.vid1 {
-	width: 60%;
-	float: right;
-	margin: 10px;
-	margin-right: 40px;
-	border-radius: 15px;
-	position: relative;
-	background-color: inherit;
-	color: inherit;
-
-	box-shadow: 0 0 20px 5px #d6d6c2;
-}
-
-.vid2 {
+.PostTitlePre {
+	height: min-content;
 	width: 100%;
-	border: 5px;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+
+}
+
+.PostTitle {
+	margin: 0px;
+	padding: 0.4em;
+	width: 90%;
+	overflow-wrap: break-word;
+	text-align: left;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+	text-align: center;
+	font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.mainV {
+	min-width: 100vw;
+	height: 100%;
+	margin: none;
+	display: flex;
+
+
+	position: relative;
+	background-color: inherit;
+	color: inherit;
+}
+
+.Category {
+	width: 25vw;
+	background-color: #030506;
+	margin: 1em;
+	padding: 1em;
+	top: 1em;
+	height: 75vh;
+	position: sticky;
+	border-radius: 0.45em;
+
+}
+
+.baseContainer {
+	width: 50vw;
+
+	position: relative;
+}
+
+.UPcontainer {
+	width: 90%;
+	float: right;
+	margin: 1em;
+	transition: background-color 1s ease-out;
+	border-radius: 0.4em;
+	box-shadow: 0px 0px 5px 2.5px rgba(128, 128, 128, 0.158);
+	position: relative;
+	background-color: var(--UPcontainer);
+	color: inherit;
+
+
+}
+
+.UPMcontainer {
+	width: 100%;
+	height: auto;
 	aspect-ratio: 16/9;
 	justify-content: center;
 	align-items: center;
@@ -505,11 +575,28 @@
 	color: inherit;
 }
 
+.UPMcontainerImg {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16/9;
+	justify-content: center;
+	align-items: center;
+	background-color: inherit;
+	color: inherit;
+}
+
+.UPMimgCl {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 99%;
+}
+
 .vid_tools {
 	width: 100%;
-	margin: 1px;
-	border-bottom-right-radius: inherit;
-	border-bottom-left-radius: inherit;
+	margin: none;
+	border-radius: inherit;
+
 	aspect-ratio: 10/1;
 	background-color: inherit;
 	color: inherit;
@@ -572,9 +659,6 @@
 	color: inherit;
 }
 
-	{
-	scroll-behavior: smooth;
-}
 
 
 /*  */
@@ -684,41 +768,96 @@
 	--fg: #EAE7F2;
 	--SBC: #d6d6c2;
 	--BoxShaCo: #1c1c1c;
-	--AccBG:#2a292b;
+	--AccBG: #2a292b;
 	--SignInBtnBg: #4b4d4c;
-	--SignInBtnHov:#454945;
+	--SignInBtnHov: #454945;
 	--SecBtnBg: #ffffff;
-	--SecBtnBgHov:#ffffffd0;
-	--SecBtnCol:black;
+	--SecBtnBgHov: #ffffffd0;
+	--SecBtnCol: black;
 	--SignUpBtnBg: #4b4d4c;
 	--SignInBtnHov: #22b175a2;
-	--SignUpBtnHov:#37a39e;
+	--SignUpBtnHov: #37a39e;
+	--profileNameBG: #7f668dce;
+	--UPcontainer: black;
 
-	_c2: #a3c2c2;
+
 	/* supposedly for novel list page but not workin */
 }
 
 .light {
 	--bg: #ECF0F1;
-	--fg: #100725;
+	--fg: #030303;
 	--SBC: #d6d6c2;
 	--BoxShaCo: #97978e;
-	--AccBG: #f0f0f3cc ;
+	--AccBG: #f0f0f3cc;
 	--SignInBtnBg: #111311;
-	--SignInBtnHov:#000000;
+	--SignInBtnHov: #000000;
 	--SecBtnBg: #000000;
-	--SecBtnBgHov:#000000c9;
-	--SecBtnCol:white;
-	--SignUpBtnBg:#111311;
-	--SignInBtnHov:#2c8a2caf;
-	--SignUpBtnHov:#3683a7d2;
-
+	--SecBtnBgHov: #000000c9;
+	--SecBtnCol: white;
+	--SignUpBtnBg: #111311;
+	--SignInBtnHov: #2c8a2caf;
+	--SignUpBtnHov: #3683a7d2;
+	--profileNameBG: rgba(96, 100, 98, 0.685);
+	--UPcontainer: whitesmoke;
 }
 
-body::-webkit-scrollbar {
-	display: none;
+
+/*   Scroll Bar Customization part  -- START --  */
+/* width and appearance for WebKit (Chrome, Safari, newer versions of Edge) */
+
+::-webkit-scrollbar {
+	width: 5px;
 }
 
+::-webkit-scrollbar-track {
+	background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* width and appearance for Mozilla Firefox */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: #888 inherit;
+}
+
+html:hover {
+	scrollbar-color: #555 inherit;
+}
+
+/* width and appearance for Microsoft Edge (Chromium-based) */
+body::-ms-scrollbar {
+	width: 5px;
+}
+
+body::-ms-scrollbar-track {
+	background: inherit;
+}
+
+body::-ms-scrollbar-thumb {
+	background: #888;
+}
+
+body::-ms-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* Other styles */
+html {
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+	/* Enable vertical scrollbar */
+	overflow-x: hidden;
+	/* Disable horizontal scrollbar */
+
+}
 
 body {
 	/* use the variable */
@@ -726,19 +865,19 @@ body {
 	color: var(--fg);
 	margin: 0 auto;
 	transition-duration: 1s;
-	-ms-overflow-style: none;
-	/* IE and Edge */
-	scrollbar-width: none;
+	z-index: 1;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
 
+/*   Scroll Bar Customization part  -- END --  */
+
 footer {
 
 	background-color: #030506;
 	color: #E4DFEE;
-	height: ???px;
+	/*height: ???px;*/
 	padding: 5px;
 	font-size: 10px;
 	box-shadow: 0 0 10px 0 #1a2a33;
@@ -750,14 +889,14 @@ footer {
 	font-size: 50px;
 }
 
-.like {
-	margin: 10px;
-	margin-left: 30px;
-	margin-top: 20px;
-	font-size: 30px;
+.IconCl {
+	margin: 1em;
+	z-index: 50;
+	font-size: 1.5em;
 	cursor: pointer;
 	float: left;
 }
+
 
 .passwd {
 	/* password content main container - needs improvement */
@@ -842,7 +981,7 @@ input:focus {
 	color: lightgoldenrodyellow;
 	animation-name: noveltool;
 	animation-duration: 1s;
-	z-index: 60;
+	z-index: 6;
 
 }
 
@@ -880,32 +1019,31 @@ input:focus {
 }
 
 .shw {
-	/* novel back to top button */
+
 	display: block;
-	/* Hidden by default */
+
 	position: fixed;
-	/* Fixed/sticky position */
+
 	bottom: 16px;
-	/* Place the button at the bottom of the page */
+
 	right: 16px;
-	/* Place the button 30px from the right */
+
 	z-index: 99;
-	/* Make sure it does not overlap */
+
 	border: none;
-	/* Remove borders */
+
 	outline: none;
-	/* Remove outline */
+
 	cursor: pointer;
-	/* Add a mouse pointer on hover */
+
 	background-color: inherit;
 	color: inherit;
 	animation-name: close_tools;
 	animation-duration: 0.75s;
-	padding: ;
-	/* Some padding */
-	/* Rounded corners */
+	/*padding: ;*/
+
 	font-size: 24px;
-	/* Increase font size */
+
 
 }
 
@@ -923,7 +1061,7 @@ input:focus {
 	justify-content: center;
 	text-align: center;
 	padding: relative;
-	 
+
 	border-width: 5px;
 	border-left: solid;
 	box-shadow: inset 0 0 100px #d6d6c2;
@@ -932,6 +1070,11 @@ input:focus {
 .drpshow {
 	/* drop down stuff */
 	display: none;
+
+	transition-duration: 1s;
+	animation-name: Disappear;
+
+
 }
 
 .drpshow.new {
@@ -939,18 +1082,19 @@ input:focus {
 	display: block;
 	float: left;
 	color: inherit;
-	background-color: #1a1a1a;
+	background-color: #1a1a1ac7;
 	text-align: center;
-	top: 54px;
-	left: 80px;
-	padding: 10px;
+	top: 4.5em;
+	left: 3em;
+	padding: 0.5em;
 	border-radius: 10px;
 	font-size: 14px;
+	transition-duration: 1s;
 	text-decoration: none;
 	position: absolute;
-	z-index: 99;
-	opacity: 1;
-	transition-duration: 2s;
+	z-index: 100;
+	animation-name: Appear;
+
 }
 
 
@@ -958,6 +1102,7 @@ input:focus {
 .new3 {
 	/* for the sake of fixing double click for js onclick */
 	outline: none;
+
 }
 
 @keyframes myanim2 {
@@ -1095,38 +1240,42 @@ input:focus {
 	border-collapse: collapse;
 }
 
-.ErrFlex{
+.ErrFlex {
+	opacity: 1;
 	flex-wrap: wrap;
 	display: flex;
+	z-index: 16;
 	flex-direction: column;
 }
 
-.Err{
+.Err {
 	/*border: 1px solid rgba(117, 104, 104, 0.836);*/
-	 position: absolute;
-	
-	 animation-name: ErrMsgAnim ;
-	 animation-duration: 10s;
-	 animation-fill-mode: forwards;
-	 padding: 0.5em;
-	 margin: 1em;
-	 background-color: rgba(255, 109, 109, 0.288);
-	 border-radius: 7.5px;
+	position: absolute;
+	z-index: 24;
+	animation-name: ErrMsgAnim;
+	animation-duration: 10s;
+	animation-fill-mode: forwards;
+	padding: 0.5em;
+	margin: 1em;
+	background-color: rgba(245, 50, 50, 0.959);
+	border-radius: 7.5px;
 
-	 
+
 
 
 }
-.Err:hover{
- cursor: pointer;
+
+.Err:hover {
+	cursor: pointer;
 
 }
 
 @keyframes ErrMsgAnim {
-	0%{
+	0% {
 		top: 65vh;
 		right: 0.09%;
 	}
+
 	/*25%{
 		top: 6.5em;
 		right: 0.25em;
@@ -1140,27 +1289,498 @@ input:focus {
 		top: 3.5em;
 		right: 0.75em;
 	}*/
-	100%{
+	100% {
 		top: 3.2em;
 		right: 0.09%;
 	}
-	
+
 }
 
-.ErrReMov{
+.ErrReMov {
 	opacity: 0;
 	transition-duration: 1s;
 }
 
 
 .UplBtn {
-	border-radius: 5px;
+	border-radius: 0.4em;
 	opacity: 0.922;
 	cursor: pointer;
-	background-color: #61474762;
+	background-color: #589c58c2;
 	outline: none;
 	border: none;
 	padding: 0.5em;
+}
+
+.UserOpt {
+	opacity: 1;
+	position: absolute;
+	top: 4em;
+	right: 0.8em;
+	color: inherit;
+	background-color: #000000ef;
+	transition-duration: 1s;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 0.001em 0px rgba(83, 82, 82, 0.719);
+	padding: 0.5em;
+}
+
+.UserOpt2 {
+	opacity: 0;
+	transition-duration: 1s;
+}
+
+.profile {
+	width: 22em;
+	position: absolute;
+	top: 5em;
+	right: 2em;
+	background-color: inherit;
+	border-radius: 10px;
+
+	box-shadow: inset 0px 0px 0.1em 0px rgba(148, 143, 143, 0.719);
+}
+
+.profileIMG {
+	border-radius: 10px;
+	padding: 0.2em;
+	margin: auto;
+	float: right;
+	top: 10%;
+	right: 48%;
+	left: 48%;
+	width: 156px;
+	aspect-ratio: 1;
+	cursor: pointer;
 
 
+}
+
+.profileName {
+	overflow: hidden;
+	margin: 0.2em;
+	padding: 0.5em;
+	background-color: var(--profileNameBG);
+	border-bottom-left-radius: 0.3125em;
+	border-bottom-right-radius: 0.3125em;
+	text-align: center;
+	top: 1.3em;
+	cursor: pointer;
+
+}
+
+.profileName:hover {
+
+
+	transform: scaleY(1.08);
+
+}
+
+
+.profileElems {
+	outline: none;
+	border: none;
+	overflow: hidden;
+	margin: 0.2em;
+	padding: 0.5em;
+	background-color: inherit;
+	border-bottom-left-radius: 0.3125em;
+	border-bottom-right-radius: 0.3125em;
+	text-align: center;
+	top: 1.3em;
+	cursor: pointer;
+
+}
+
+.profileElems:hover {
+	background-color: #757575;
+	transform: scale(1.043);
+}
+
+.UserOptIcon {
+	outline: none;
+	border: none;
+	overflow: hidden;
+	margin: 0.2em;
+	font-size: 15px;
+	padding: 0.5em;
+
+	border-radius: 5px;
+	text-align: center;
+	top: 1.3em;
+	cursor: pointer;
+
+}
+
+.deleteanytimenotimp {
+	color: rgba(62, 184, 221, 0.781);
+}
+
+
+
+
+
+.coolTransit {
+	opacity: 1;
+	transition-duration: 2s;
+}
+
+.ConfirmDelBox {
+	animation-name: Appear;
+	animation-duration: 1s;
+	top: -5em;
+	backdrop-filter: blur(3px);
+	box-shadow: 0px 0px 10px 0px #000000cb;
+	width: 100vw;
+	height: 110vh;
+	background-color: #000000c9;
+	z-index: 8;
+	position: relative;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+}
+
+@keyframes Appear {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes Disappear {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.ConfirmDelDiag {
+	border-radius: 10px;
+	transition-duration: 1s;
+	top: 5em;
+	width: 30em;
+	height: auto;
+	margin: 6em;
+	color: inherit;
+	padding: 4em;
+	position: absolute;
+	background-color: #FFF9E6;
+	z-index: 8;
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+}
+
+.redText {
+	/*for stuff like required fields*/
+	color: rgb(236, 18, 18);
+	margin: none;
+	padding: 0.5em;
+	border: none;
+	outline: none;
+
+}
+
+.UplBox {
+	opacity: 0;
+	width: 60vw;
+	max-height: 0em;
+	top: 0em;
+	margin: 0 auto;
+	background-color: #0c0b0bcc;
+	color: whitesmoke;
+	position: absolute;
+	padding: 1em;
+	max-height: fit-content;
+	visibility: hidden;
+	border-radius: 0.45em;
+	animation-fill-mode: forwards;
+	animation-duration: 1.5s;
+	transition-duration: 1.5s;
+	z-index: 60;
+}
+
+@keyframes AppearUpl {
+	from {
+		opacity: 0;
+
+
+		top: 0em;
+		visibility: hidden;
+
+	}
+
+	to {
+		opacity: 1;
+
+		visibility: visible;
+
+		top: 4em;
+
+	}
+}
+
+@keyframes DisappearUpl {
+	from {
+		opacity: 1;
+
+		visibility: visible;
+
+		top: 4em;
+
+	}
+
+	to {
+		opacity: 0;
+
+		visibility: hidden;
+
+		top: 0em;
+
+	}
+}
+
+.titleInput {
+	border-radius: 0.35em;
+	border: none;
+	outline: none;
+	color: white;
+	background-color: #111311;
+}
+
+.closeIconCust {
+	right: 0em;
+	top: 0em;
+	float: right;
+	font-size: 10px;
+	color: gray;
+	cursor: pointer;
+}
+
+.UplForm {
+	height: auto;
+	width: 80%;
+	border-radius: 10px;
+	background-color: inherit;
+	box-shadow: 0px 0px 0.5em 0px var(--BoxShaCo);
+	flex-direction: column;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-duration: 1.5s;
+	z-index: 0.7;
+	text-align: center;
+}
+
+/* Hide fullscreen button */
+video::-webkit-media-controls-fullscreen-button,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel {
+	display: none !important;
+}
+
+/* Hide timeline controls */
+video::-webkit-media-controls-timeline {
+	visibility: hidden !important;
+}
+
+.PicPlNam {
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ByUser {
+	margin: 0em;
+	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+	position: relative;
+
+	padding: 0.5em;
+}
+
+.ByUser:hover {
+	cursor: pointer;
+}
+
+.ByInfo {
+	padding: 0.5em;
+
+}
+
+.UPopts {
+
+	right: 0em;
+	padding: 0.2em;
+	margin: 0.4em;
+	position: absolute;
+	font-size: 16px;
+	transition: transform 0.5s;
+	transform-origin: center;
+}
+
+.optsElems {
+	opacity: 1;
+	outline: none;
+	border: none;
+	overflow: hidden;
+	margin: 0.2em;
+	padding: 0.5em;
+
+	backdrop-filter: blur(5px);
+	background-color: black;
+	color: rgba(197, 178, 178, 0.712);
+	border-radius: 0.3125em;
+	text-align: center;
+	cursor: pointer;
+
+}
+
+.optsElems:hover {
+	backdrop-filter: blur(0px);
+	background-color: #7c7a7ace;
+	transition-duration: 0.3s;
+}
+
+.UPoptsBox {
+	width: 10vw;
+	height: fit-content;
+	visibility: hidden;
+	position: absolute;
+	top: 3em;
+	right: 2em;
+	color: white;
+	z-index: 40;
+	opacity: 1;
+	animation: Disappear 1s;
+	backdrop-filter: blur(5px);
+	border-radius: 0.455em;
+	background-color: rgba(59, 56, 56, 0.568);
+	transition-duration: 1s;
+}
+
+.UPoptsDis {
+	visibility: visible;
+	transition-duration: 1s;
+	animation: Appear 1s;
+
+}
+
+
+.profIMG {
+
+
+	display: inline-block;
+	width: 15%;
+	height: 15%;
+	border-radius: 25%;
+
+	object-fit: cover;
+}
+
+.Go2Top {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 99;
+	font-size: 2em;
+	background-color: inherit;
+
+}
+
+.Go2Top:hover {
+	cursor: pointer;
+}
+
+
+.SortOpt {
+	margin: 0em;
+	padding: 0.5em;
+	max-width: 95%;
+	width: fit-content;
+	flex: 0 0 auto;
+	height: auto;
+	border-radius: 0.35em;
+}
+
+.SortOpt:hover {
+	background-color: #4d4a4ac9;
+	cursor: pointer;
+}
+
+.SortOptCont {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	top: 0;
+	margin: 0.25em;
+	max-width: 95%;
+	padding: 0.25em;
+	width: fit-content;
+	height: auto;
+}
+
+
+.RecentViewCont {
+	margin: 0.2em;
+	padding: 0.3em;
+	display: flex;
+	flex-wrap: wrap;
+	width: fit-content;
+	max-width: 90%;
+	height: 250px;
+	/* Fixed height for the container */
+	overflow: hidden;
+	/* Hide any overflowing content outside the container */
+}
+
+.RecentViewVid {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0.1em;
+	height: 100%;
+	/* Set the height of the content to 100% of the container height */
+	overflow: auto;
+	/* Enable scroll for overflowing content */
+	max-width: 100%;
+}
+
+.file_input {
+	display: inline-block;
+	width: fit-content;
+	margin: 0.2em;
+	padding: 0.2em;
+	border-radius: 0.354em;
+	background-color: inherit;
+	border: none;
+	outline: none;
+	padding: 0.2em;
+
+
+}
+
+.file_input:hover {
+	cursor: pointer;
+	background-color: rgba(128, 128, 128, 0.623);
+}
+
+.number {
+	margin: 0.1em;
+	font-family: 'Roboto';
+	color: grey;
+	padding: 0.1em;
 }

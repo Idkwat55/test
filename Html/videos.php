@@ -1,11 +1,16 @@
 <head>
     <title>Movies | Sammlung</title>
-    <meta name="description"content="Visual Media Page : Sammlung - One Place for all your Entertainemt needs">
+    <meta name="description" content="Visual Media Page : Sammlung - One Place for all your Entertainemt needs">
 </head>
-<?php if (!isset($HeaderInclu)) {
+
+<?php
+session_start();
+if (!isset($HeaderInclu)) {
+
     include 'header.php';
     $HeaderInclu = true;
-} ?>
+}
+?>
 
 <script type="text/javascript">
     document.getElementById('hov2').classList.add('actives');
@@ -15,18 +20,9 @@
 
 </script>
 
-<!--
-<div id="nov_tool">
-    <button  onclick="bac_2_func()"  class="icon-circle-up bac_2_top" id="bac_2" ></button>
-    <ul>
-        <a href="videos.php#main"> Main</a>
-        <a href="videos.php#user">User uploaded</a>
-    </ul>
- </div>
--->
+
 <?php
 
-    
 $ContineFlg = include 'verify.php';
 if ($ContineFlg === (false || null)) {
     echo "<script>
@@ -34,82 +30,40 @@ if ($ContineFlg === (false || null)) {
     </script>";
     exit;
 }
+
 ?>
 
-<div class='vid0'>
-    <p class="abc"> <strong id="main"> Uploads </strong></p>
-    <?php
+<span id="Go2Top" onclick="bac_2_func()" class="Go2Top icon-keyboard_arrow_up"></span>
 
-    $dir = "../Resources/Movies/";
-    if (is_dir($dir)) {
-        if ($dh = opendir($dir)) {
-            while (($file = readdir($dh)) !== false) {
-                if ($file != '.' && $file != '..') {
-                    $fileName_aft = pathinfo($file, PATHINFO_FILENAME);
-                    $id_vid1 = json_encode($file);
-                    echo "
-                 <div class='vid1  ' id='" . $file . "'>  
-               
-                 <p class='abc'> " . $fileName_aft . " </p>              
-                 <video class='vid2    '  controls>
-                 <source src=\"" . $dir . $file . "\" type=\"video/mp4\"> 
-                 <source src=\"" . $dir . $file . "\" type=\"video/ogg\">
- 
-              </video>
+<div id="mainV" class="mainV">
+    <div id="Category" class="Category font">
+        <div class="SortOptCont">
+            <span style="margin: 0px;border:none;padding:0.5em; ">Sort By </span>
+            <div class="SortOpt">Latest</div>
+            <div class="SortOpt">Top</div>
+            <div class="SortOpt">Trending</div>
 
-                 
-                <div class='vid_tools'>
-                  <div class='icon-arrow-up like' onclick=\"alert('Upvoted!')\"> </div>
-                </div>
-                 
-                </div>
-               
-                
-                ";
-                }
-            }
-            closedir($dh);
-        }
-    }
-    ?>
-
-
-
-
-
-    <p class="abc"> <strong id="user">User Uploads </strong></p>
-    <?php
-
-    $dir = "../Uploads/Videos/";
-
-    if (is_dir($dir)) {
-        if ($dh = opendir($dir)) {
-            while (($file = readdir($dh)) !== false) {
-                $FileType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-                if ($file != '.' && $file != '..' && $FileType == 'mp4' || $FileType == 'webm ' || $FileType == 'mkv' || $FileType == 'avi') {
-                    $fileName_aft = pathinfo($file, PATHINFO_FILENAME);
-                    echo "
-                <div class='vid1  ' id='" . $file . "'>  
-               
-                <p class='abc'> " . $fileName_aft . " </p>              
-                <video class='vid2    '  controls>
-                <source src=\"" . $dir . $file . "\" type=\"video/mp4\"> 
-                <source src=\"" . $dir . $file . "\" type=\"video/ogg\">
-                </video>
-                                 <div class='vid_tools'>
+        </div>
+        <hr>
+        <div>
+            <span>Recently Viewed</span>
+            <div class="RecentViewCont">
+                <div class="RecentViewVid">
+                    This space is originally intendd for recently Viewed videos / media however i , being the goon i am,
+                    failed to realise that this is not YouTube and so there is not need for the recent view , heck there
+                    isn't even a way to
+                    determine what is recently viewed. Thus this place's content is now up for debate.
+                    
 
                 </div>
-                </div>
-               
-                
-                ";
-                }
-            }
-            closedir($dh);
-        }
-    }
+            </div>
+        </div>
 
-    ?>
+    </div>
+    <div id="baseContainer" class='baseContainer'>
+
+
+        <script src="../script/cont.js"></script>
+    </div>
 </div>
-
 <?php include 'footer.php'; ?>

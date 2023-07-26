@@ -5,7 +5,7 @@
 
 <meta name="viewport"content="width=device-width,initial-scale=1">
 
-<title>Home | Index</title>
+<title></title>
 
 <link rel="stylesheet" type="text/css" href="../../../Css/02- css.css"/>
 <link rel="stylesheet" type="text/css" href="../../../Css/css2.css"/>
@@ -22,14 +22,14 @@
 
 <body>
 
-<header>
+<header id="header" >
 
 <div class="font_for_header">
 <div class="navbar">                             <!-- nav bar and its buttons -->
- <a class="active icon-home" href="../../../Html/home-index.php">   </a>
+ <a id="home_btn" class="icon-home"  href="../../../Html/home-index.php">   </a>
 
 <!-- drop down stuff -->
-<a onclick="dropdowns()" id="dropdown2"
+<a onclick="dropdowns()"  style="cursor:pointer;" id="dropdown2"
           class="new3 icon-burger_list_menu_navigation_icon"></a>
 
      <div id="dropdown" class="drpshow my2" >
@@ -38,12 +38,15 @@
       <a id="hov3" class="icon-lock" href="../../Manga/manga-index.php"></a>
    </div>
 
-<a class="icon-upload3" href="./Uploads_html.php">  </a>
+<a id="upload_opt" class="icon-upload3" href="./Uploads_html.php">  </a>
 
- <p class="navtxt" href="./about.php">Sammlung</p> 
+ <p class="navtxt  "  onclick= "window.open('./about.php' ,'_self') ">Sammlung</p> 
+<a id="account" href="account.php" style="cursor: pointer;" class="icon-user"></a>
 
-<a id="switch" onclick="switchTheme();" > <i class="icon-moon_sharp_icon"></i> </a>
+<a id="switch" style="cursor: pointer;" onclick="switchTheme(); "class="icon-moon_sharp_icon"  >
+</a>
      <!-- dark mode ^ -->
+
 </div>
 </div>
 

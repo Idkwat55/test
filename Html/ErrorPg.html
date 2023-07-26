@@ -1,10 +1,10 @@
 <script>
 
     if (TokenErr !== 'undefined' && TokenErr === true) {
-        
-      
+
+
         document.addEventListener('DOMContentLoaded', function () {
-           
+
             var ErrMsgBox = document.createElement('div');
             ErrMsgBox.className = 'ErrFlex';
 
@@ -12,11 +12,16 @@
             ErrMsg.className = 'Err';
 
             ErrMsgBox.appendChild(ErrMsg);
-            document.body.appendChild(ErrMsgBox);
+
+            var unselectableElements = document.body.getElementsByClassName('unselectable');
+            if (unselectableElements.length > 0) {
+                var firstUnselectableElement = unselectableElements[0];
+                firstUnselectableElement.appendChild(ErrMsgBox);
+            }
 
             var ErrMsgTxt = document.createElement('p');
             ErrMsg.appendChild(ErrMsgTxt);
-            ErrMsg.classList.add('fonts');
+            ErrMsg.classList.add('font');
             // ErrMsg.classList.toggle('ErrShw');
             ErrMsgTxt.innerHTML = ErrValStrJS;
             setTimeout(function () {
@@ -25,7 +30,7 @@
                     ErrMsg.parentNode.removeChild(ErrMsg);
                     ErrMsgBox.parentNode.removeChild(ErrMsgBox);
                 }, 1 * 1000);
-            }, 14 * 1000 );
+            }, 14 * 1000);
 
         });
 

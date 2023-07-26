@@ -7,67 +7,56 @@ global $user; //user name as in input text field
 global $UsrId; // same as user name , as in tex field, used in jwt and jwt verifiy php
 global $VeriFlg; // to look up db ,after decoding jwt
 global $verifSucs; // tells result of decoded jwt look up
+global $UserEmail;
+global $AddMailFlg;
+global $SignUpStat;
+
+ 
 
 $VeriFlg = false;
 $verifSucs = false;
 $FlagAllowIn = false; //initially false
-$user = $_POST['user'];
-$pswd = $_POST['pswd'];
+$user = str_replace(' ', '', trim($_POST['user']));
+$pswd = str_replace(' ', '', trim($_POST['pswd']));
 
-//$BarePswd = $_POST['pswd'];
-/*
-$pswd = password_hash($BarePswd,PASSWORD_ARGON2ID);
-if (password_verify($BarePswd, $pswd)) {
-    // Password matches
-    echo "<br>Password is correct.";
-} else {
-    // Password does not match
-    echo "<br>Password is incorrect.";
-}*/
- 
+$email = str_replace(' ', '', trim($_POST['email']));
+
+
 
 if ($_POST['submit'] == "Sign In") {
     $FlagSign = "In";
-    
+
     try {
-     //delete   echo"Pass 1 ";
-      //delete  echo $pswd ;
-       //delete echo "<br>";
-      //delete  $pswd= include "cipherPswd.php";
-      //delete  echo $pswd ;
-     //delete   echo" --------------<br><br>";
+
         require "sql.php"; //import sql.php
-    //delete  echo "pass 2 ";
-    } catch (Exception $e){
-        echo $e;
-;    }
-    finally {
-        if ($FlagAllowIn === true ) {
-           //delete echo "<br>pass 3 <br>";
-          //  $pswd= include "cipherPswd.php";
- //delete echo "aaf ";
-		//delete	echo $pswd;
+
+    } catch (Exception $e) {
+        echo $e->getMessage();
+
+    } finally {
+        if ($FlagAllowIn === true) {
+
             //continue if verifiede
-            
+
             include 'jwt.php';
-            $GoAhead =true;
-          
-            if ( !isset($_COOKIE["valid"]) || $_COOKIE["valid"] === false){
-                setcookie("valid",true);
-                echo"<script> loaction.reload()</script>";
+            $GoAhead = true;
+
+            if (!isset($_COOKIE["valid"]) || $_COOKIE["valid"] === false) {
+                setcookie("valid", true, time() + 3 * 60 * 60);
+                echo "<script> loaction.reload()</script>";
             }
-// Set the custom header with the variable value
-header('X-Custom-Variable: ' . $GoAhead);
-            
+            // Set the custom header with the variable value
+            header('X-Custom-Variable: ' . $GoAhead);
+
+
 
         } else {
 
-            exit("<br> Sign In failed");
+            exit("<br> Sign In Failed! <br>");
         }
     }
 
-}
- elseif ($_POST['submit'] == "Sign Up") {
+} elseif ($_POST['submit'] == "Sign Up") {
     $FlagSign = "Up";
     $processFlag = true;
     $check1 = "";
@@ -77,36 +66,84 @@ header('X-Custom-Variable: ' . $GoAhead);
     }
     if (strlen($pswd) <= 8) {
         $check1 .= "<br>Password cannot be less than 8 characters!<br>";
+
         $processFlag = false;
     }
-    $barredChar = array('$', '*', '?', '/', '\\','//','\\\\' ,'.','->');
+    if ($email === null || $email === 'null') {
+        $check1 .= "<br> Email Address is neeeded to Sign Up! <br>";
+        $processFlag = false;
+    }
+    /* --DO NOT DELETE MAY NEED IT--
+
+    $barredChar = array('$', '*', '?', '/', '\\', '//', '\\\\', '.', '->');
     foreach ($barredChar as $Char) {
-        if (strpbrk($user, $Char)) {
-            echo "'" . $Char . "' is not allowed";
+        if (strpbrk($user, $Char) || strpbrk($pswd, $Char)) {
+            echo "'" . $Char . "' is not allowed. ";
             $processFlag = false;
-            $showbarChar = true;
+            $showbarChar = true;                                --DO NOT DELETE MAY NEED IT--
         }
 
-    }
-    if ($showbarChar) {
+--DO NOT DELETE MAY NEED IT--
+
+    } 
+    if ($showbarChar) {--DO NOT DELETE MAY NEED IT--
+        echo "<br> Illegal Characters : ";                      --DO NOT DELETE MAY NEED IT--
         foreach ($barredChar as $Char1) {
-            echo $Char1;
+            echo  $Char1 ."\t";
         }
 
-    }
+--DO NOT DELETE MAY NEED IT--
+
+    }*/
 
     echo $check1;
     $pass1 = "";
     if ($processFlag) {
-     //delete   $pswd = include "cipherPswd.php";
-      //delete  echo $pswd;
+        //delete   $pswd = include "cipherPswd.php";
+        //delete  echo $pswd;
         $nameUsr = $user;
         $passwordUsr = $pswd;
         include "sql.php";
+        if ($SignUpStat) {
+            $FlagSign = "In";
+
+            try {
+
+                require "sql.php"; //import sql.php
+
+            } catch (Exception $e) {
+                echo $e->getMessage();
+
+            } finally {
+                if ($FlagAllowIn === true) {
+
+                    //continue if verifiede
+
+                    include 'jwt.php';
+                    $GoAhead = true;
+
+                    if (!isset($_COOKIE["valid"]) || $_COOKIE["valid"] === false) {
+                        setcookie("valid", true, time() + 3 * 60 * 60);
+                        echo "<script> loaction.reload()</script>";
+                    }
+                    // Set the custom header with the variable value
+                    header('X-Custom-Variable: ' . $GoAhead);
+
+
+
+                } else {
+                 
+                    
+                    exit("<br> Sign In Failed! <br>");
+                }
+            }
+        }
 
     } else {
-
-        exit("<br>Sign Up Failed!");
+       
+        
+        
+        exit("<br> Sign Up Failed! <br>");
     }
 
 

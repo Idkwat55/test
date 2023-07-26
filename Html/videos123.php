@@ -1,104 +1,40 @@
 <head>
     <title> Sammlung | Movies</title>
 </head>
- <?php include 'header123.php';?>
+<?php include 'header123.php'; ?>
 
 <script type="text/javascript">
-   window.onload= function(){
-      document.getElementById('hov2').classList.add('actives');
-      document.getElementById('dropdown2').classList.add('actives');
-   }
-   
+    window.onload = function () {
+        document.getElementById('hov2').classList.add('actives');
+        document.getElementById('dropdown2').classList.add('actives');
+
+    }
+
 </script>
 
-
-<!--
-<div id="nov_tool">
-    <button  onclick="bac_2_func()"  class="icon-circle-up bac_2_top" id="bac_2" ></button>
-    <ul>
-        <a href="videos.php#main"> Main</a>
-        <a href="videos.php#user">User uploaded</a>
-    </ul>
- </div>
--->
-<div  class='vid0   '>
-
-<section id="main">
-    <p class="abc"> <strong> Uploads </strong></p>
-<?php
-
-$dir = "../Resources/Movies/";
- if (is_dir($dir))
- {
-    if ($dh = opendir($dir)){
-        while (($file = readdir($dh)) !== false){
-            if($file != '.' && $file != '..'){
-                 $fileName_aft =pathinfo($file, PATHINFO_FILENAME);
-                echo "
-                 
-                <div class='vid1  '>  
-               
-                <p class='abc'> ".$fileName_aft." </p>              
-                <video class='vid2    '  controls>
-                <source src=\"". $dir . $file ."\" type=\"video/mp4\"> 
-                <source src=\"". $dir . $file ."\" type=\"video/ogg\">
-                </video>
-                <div class='vid_tools'>
-
-                </div>
-                 
-                </div>
-               
-                
-                ";
-            }
-        }
-        closedir($dh);
-    }
-}
-?>
-</section>
+     <form action="Upload.php" method="post" enctype="multipart/form-data"
+                                   id="upload">
+                                   <label for="file" class="custom-file-input">
+                                        <span>Choose File</span>
+                                        <input type="file" id="file" placeholder="hi"
+                                             accept=".mp4,.png,.mkv,.avi,.webm,.webp,.jpg,.jpeg" name="file" required>
+                                   </label>
+                                   <label for="title" class="custom-file-input">
+                                        <span>Title</span>
+                                        <input type="text" required name="title" id="title">
+                                   </label>
+                                   <input type="submit" id="submit" class="UplBtn" name="submit" value="Upload">
+                                   <div class="bar">
+                                        <span class="bar-fill" id="pb"><span class="bar-fill-text"
+                                                  id="pt"></span></span>
+                                   </div>
+                                   <div id="uploads" class="uploads">
+                                        .
+                                   </div>
+                              </form>
 
 
 
-<section id="user">
-    <p class="abc"> <strong>User Uploads    </strong></p>
-<?php 
-
-$dir = "../Uploads/Videos/";
-
- if (is_dir($dir))
- {
-    if ($dh = opendir($dir)){
-        while (($file = readdir($dh)) !== false){
-            $FileType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
-            if($file != '.' && $file != '..' && $FileType == 'mp4'|| $FileType == 'webm '){
-                 $fileName_aft =pathinfo($file, PATHINFO_FILENAME);
-                echo "
-                <div class='vid1  '>  
-               
-                <p class='abc'> ".$fileName_aft." </p>              
-                <video class='vid2    '  controls>
-                <source src=\"". $dir . $file ."\" type=\"video/mp4\"> 
-                <source src=\"". $dir . $file ."\" type=\"video/ogg\">
-                </video>
-                                 <div class='vid_tools'>
-
-                </div>
-                </div>
-               
-                
-                ";
-            }
-        }
-        closedir($dh);
-    }
-}
-
-?>
-</section>
-
-</div>
 
 
-<?php include 'footer123.php';?>
+<?php include 'footer123.php'; ?>

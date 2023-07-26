@@ -13,7 +13,7 @@
 
 </footer>
 
-<script type="text/javascript" src="../script/123.js" ></script>  
+<script   src="../script/123.js" ></script>  
 
 </body>
 

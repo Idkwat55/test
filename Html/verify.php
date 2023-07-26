@@ -1,6 +1,7 @@
 <?php
 global $sec_key; // to get key
 global $ErrValStr;
+global $DelAccSql;
 
 $ErrValStr = "";
 
@@ -15,17 +16,13 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
 include "jwtK.php";
+
+
 try {
     if (!isset($_COOKIE['token'])) {
         $ErrValStr = "You need to Sign In for this";
         throw new Exception("No Cookie Set");
     }
-
-
-
-
-
-
     $jwtVerif = $_COOKIE['token'];
     $decodJwt = JWT::decode($jwtVerif, new Key($sec_key, 'HS256'));
 
@@ -37,20 +34,41 @@ try {
 
     //echo "$UsrSubId, <br> $UsrId";
 
-
+    global $verifSucs;
     include 'sql.php';
+ 
+    if (isset($verifSucs) && $verifSucs) {
+        global $Details;
+        $Details = [  $UsrId, $UsrSubId];
+      
+        if (isset($ConfirmedDelAcc) && $ConfirmedDelAcc === true) {
+            $DelAccSql = true;
+            include 'sql.php';
 
-    if ($verifSucs) {
-        echo "<script>
+        } else {
+
+            echo "<script>
          console.log('User Verification - Success');
          
          </script> "; //to be removed are return bool
-         
-         if ( !isset($_COOKIE["valid"]) || $_COOKIE["valid"] === false){
-            setcookie("valid",true);
-            echo"<script> loaction.reload()</script>";
+
+            if (!isset($_COOKIE["valid"]) || $_COOKIE["valid"] === false) {
+                setcookie("valid", true, time() + 3 * 60 * 60);
+                echo "<script> loaction.reload()</script>";
+            }
+            if (isset($ReissueReq) && $ReissueReq === true) {
+                $sub = $UsrSubId;
+                $user = $UsrId;
+                $FlagAllowIn = true;
+                include 'jwt.php';
+
+
+            }
+
         }
-         
+    }  else{
+        throw new Exception("Verification Failed! Try Signing In again");
+
     }
 
 } catch (Exception $e) {
@@ -68,16 +86,17 @@ try {
         const ErrValDev = \"$e\";
         const ErrValStrJS = \"$ErrValStr\";
         </script>";
-    
-    if ( !isset($_COOKIE["valid"]) || $_COOKIE["valid"] === true){
-        setcookie("valid",false);
+
+    if (!isset($_COOKIE["valid"]) || $_COOKIE["valid"] === true) {
+        //  setcookie("valid", false, time() + 3 * 60 * 60);
+        echo "<script> setCookie('valid',false,3/24);</script>";
     }
     include "ErrorPg.html";
     include "account.php";
     $VeriFlg = false;
-    
+
     exit;
-   
+
 
 }
 
