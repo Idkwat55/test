@@ -29,11 +29,16 @@ Note
 This repository is supposed to be private. If you found this repository in public, please let me know.
 
 Project Screenshots
- ![Uploading Screenshot (107).png…]()
-![Uploading Screenshot (106).png…]()
-![Screenshot (109)](https://github.com/Idkwat55/test/assets/117009120/06ea05db-966a-4298-811d-47a99f02be59)
-![Uploading Screenshot (108).png…]()
-
+ 
+ 
+ Home Page:
+ ![Screenshot (106)](https://github.com/Idkwat55/test/assets/117009120/c2cba741-a4d0-43ad-81cd-65d40ab5ae5f)
+Login Page:
+![Screenshot (109)](https://github.com/Idkwat55/test/assets/117009120/b99f0ff4-dbbb-435c-af2c-148078465f27)
+Media Page:
+![Screenshot (107)](https://github.com/Idkwat55/test/assets/117009120/709c4a1d-542e-4d81-862b-28cdd640e7f0)
+Random Dialog Box:
+![Screenshot (108)](https://github.com/Idkwat55/test/assets/117009120/e26622b2-d2fb-42e2-833f-a74f619d4603)
 
 How to Contribute
 If you are interested in contributing to this project, feel free to reach out to me via email (your.email@example.com) or create an issue on this repository. I welcome any suggestions, bug reports, or feature requests!
