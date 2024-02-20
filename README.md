@@ -52,9 +52,7 @@ Random Dialog Box:
 ![Screenshot (108)](https://github.com/Idkwat55/test/assets/117009120/e26622b2-d2fb-42e2-833f-a74f619d4603)
 
 ---
-How to Contribute:
-
-If you are interested in contributing to this project, feel free to reach out to me via email (your.email@example.com) or create an issue on this repository. I welcome any suggestions, bug reports, or feature requests!
+Feel free to reach out to me via email (risikesvarg@gmail.com) or create an issue on this repository. I welcome any suggestions, bug reports, or feature requests!
 
 ---
 **##License :**
