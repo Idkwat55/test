@@ -36,17 +36,17 @@ try {
 
     global $verifSucs;
     include 'sql.php';
- 
+
     if (isset($verifSucs) && $verifSucs) {
         global $Details;
-        $Details = [  $UsrId, $UsrSubId];
-      
+        $Details = [$UsrId, $UsrSubId];
+
         if (isset($ConfirmedDelAcc) && $ConfirmedDelAcc === true) {
             $DelAccSql = true;
             include 'sql.php';
 
         } else {
-
+            
             echo "<script>
          console.log('User Verification - Success');
          
@@ -66,7 +66,7 @@ try {
             }
 
         }
-    }  else{
+    } else {
         throw new Exception("Verification Failed! Try Signing In again");
 
     }

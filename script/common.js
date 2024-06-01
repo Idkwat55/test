@@ -1,5 +1,12 @@
 //theme 
 
+function stupid(){
+ setTimeout(() => {
+    DisplErr("You're a certified Moron!");
+ }, 1 * 1000);
+ window.location.href ='../Html/about_auth.php';
+}
+
 var BoxShaId;
 
 
@@ -511,7 +518,7 @@ function UserOpts() {
       }
    } else if (NotSignedIn === false || NotSignedIn === 'undefined' || NotSignedIn === null) {
       var NotSignedIn = true;
-      console.error("You are not signed in right now. Sign in with your Sammlung account to user this feature.");
+      console.error("You are not signed in right now. Sign in with your Sammlung account to access this feature.");
    }
 }
 
@@ -568,12 +575,12 @@ try {
    }));
 } catch (e) {
    console.error(e.message);
- }
+}
 
 var wheelOpt = supportsPassive ? { passive: false } : false;
 var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
-// call this to Disable
+// call this to Disable 
 function disableScroll() {
    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
@@ -605,10 +612,15 @@ function LogOut() {
       }, 1000);
    }
    else if (RemUserOpt === 'undefined' || RemUserOpt === null) {
-      DisplErr("You will be signed out in 10 secs");
+      DisplErr("You are signed out!");
+
+      setTimeout(()=>{
+         DisplErr("You will be Redirected!");
+      },1 * 1000);
+     
       setTimeout(() => {
          history.back();
-      }, 10 * 1000);
+      }, 3.14 * 1000);
 
    } else {
       setInterval(() => {
@@ -656,7 +668,8 @@ function ReqDel(event, type) {
       event.preventDefault();
       var a12 = document.getElementById('UserDelName').value;
       var b12 = document.getElementById('UserDelPswd').value;
-      if (a12.length < 8 || b12.length < 4) {
+      alert(a12.length +" "+b12.length);
+      if ((a12.length1) < 4 || (b12.length)< 8) {
          DisplErr("You have entered Invalid Details!");
       }
       else {
@@ -824,18 +837,31 @@ function Upload(event) {
    });
 
    // Onload event listener to handle the server response
-   xhr.onload = function () {
-      if (xhr.status === 200) {
-         // Handle the successful upload
-         console.log('Upload successful');
-      } else {
-         // Handle upload errors
-         console.log('Upload error: ' + xhr.status);
-      }
-   };
+   xhr.onload = function() {
+        if (xhr.status === 200) {
+            // Parse the JSON response from the PHP script
+            var response = JSON.parse(xhr.responseText);
+
+            if (response.status === 'success') {
+               // alert(response.message);
+                // Further actions on successful upload
+                DisplErr('Upload Successful');
+               console.log('Upload successful', response.title, response.fileName);
+            } else {
+             //   alert(response.message);
+                // Handle upload errors
+                DisplErr(response.message);
+                console.log('Upload error: ', response.message);
+            }
+        } else {
+            DisplErr('Upload failed');
+            console.log('Upload error: ' + xhr.status);
+        }
+    };
 
    // Send the form data
    xhr.send(formData);
+ 
 }
 
 
@@ -872,21 +898,109 @@ window.onscroll = function scrollFunction() {
 
 
 
-function FeatureHandler(type, eventOrigin, originVID, originAID) {
+function FeatureHandler(type, event, originVID, originAID) {
    // Origin refers to the origin point of the request -> the target vid
- try {
-     var RequestUpdateXML = new XMLHttpRequest();
-     
-     console.log(UserName + " "+type +" "+ originVID+" "+ originAID);
-     RequestUpdateXML.onreadystatechange = function () {
-        if (this.status === 200 && this.readyState === 4) {
-          
-        }
-     }
-     RequestUpdateXML.open("POST","FeatureHandler.php");
-     RequestUpdateXML.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-     RequestUpdateXML.send("type="+type+"&VID="+originVID+"&AID="+originAID);
- } catch (e) {
-    console.error(e.message);
- }
+   try {
+      var RequestUpdateXML = new XMLHttpRequest();
+
+      console.log(UserName + " " + type + " " + originVID + " " + originAID);
+      RequestUpdateXML.onreadystatechange = function () {
+         if (this.status === 200 && this.readyState === 4) {
+            if (type === 4 || type === '4') {
+               var GetTargetClass = event.target.classList;
+               if (GetTargetClass.contains('icon-favorite_outline')) {
+                  GetTargetClass.remove('icon-favorite_outline');
+                  GetTargetClass.add('icon-favorite');
+               } else if (GetTargetClass.contains('icon-favorite')) {
+                  GetTargetClass.remove('icon-favorite');
+                  GetTargetClass.add('icon-favorite_outline');
+               }
+
+            } else if (type === '3' || type === 3) {
+               //let ComntResponseFinder = new RegExp("<\\|>" + "(.*?)" + "<\\|>");
+             //  let response = this.responseText;
+             //  let ComntResponse = response.match(ComntResponseFinder);
+              // if (ComntResponse && ComntResponse.length > 1) {
+                  /*   let GetResponseObj = ComntResponse[1];
+   
+                     let GetResponse_Decoded = JSON.parse(GetResponseObj);
+   */
+
+                  let CommentBoxObj = event.target.parentNode.parentNode.nextSibling.nextSibling;
+                  console.log(CommentBoxObj);
+                  let GetAnimationInfo = window.getComputedStyle(CommentBoxObj).animationName;
+                  if (GetAnimationInfo === 'none') {
+                     CommentBoxObj.childNodes[1].innerHTML =this.response;
+
+                     CommentBoxObj.style.animationName = 'AppearComnt';
+
+                  } else if (GetAnimationInfo === 'AppearComnt') {
+
+                     CommentBoxObj.style.animationName = 'DisappearComnt';
+
+                  } else if (GetAnimationInfo === 'DisappearComnt') {
+
+                     CommentBoxObj.style.animationName = 'AppearComnt';
+
+                  }
+
+             //  } else {
+               //   alert('nope');
+                 // console.log("REg Exp : " + ComntResponse);
+                  //console.log("Respomse :" + this.response);
+               //}
+
+            }
+            else {
+               let targetObj = event.target.parentNode.childNodes;
+               let target = targetObj[1];
+               console.log(targetObj);
+               console.log(target);
+               let targetVal = parseInt(target.textContent);
+               console.log(targetVal);
+               target.innerHTML = targetVal + 1;
+               console.log(targetVal + 1);
+
+               let targetObj2 = event.target.parentNode.parentNode.childNodes;
+               let target2tmp = targetObj2[3].childNodes;
+               let target2 = target2tmp[1];
+               console.log(targetObj2);
+               console.log(targetObj2[3]);
+
+               let target2Val = parseInt(target2.textContent);
+               console.log(target2Val);
+               target2.innerHTML = target2Val - 1;
+               console.log(target2Val + 1);
+
+
+            }
+         }
+      }
+      RequestUpdateXML.open("POST", "FeatureHandler.php");
+      RequestUpdateXML.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      RequestUpdateXML.send("type=" + type + "&VID=" + originVID + "&AID=" + originAID);
+   } catch (e) {
+      console.error(e.message);
+   }
 }
+
+
+function AddComnt(VID, AID, event, $SCFLG, $SCID, $CC) {
+
+   console.log('Received Request');
+   let CC = event.target.previousSibling.previousSibling.value;
+
+   console.log(CC);
+   let ComntXML = new XMLHttpRequest();
+   ComntXML.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) { }
+
+      console.log('ReadyState: ' + this.response);
+   }
+
+
+   ComntXML.open("POST", "AddComt.php");
+   ComntXML.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   ComntXML.send('VID=' + VID + "&AID=" + AID + '&event=' + event + "&CC=" + CC + "&SCFLG=" + 0 + "&CID=" + false);
+}
+

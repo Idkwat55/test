@@ -60,6 +60,22 @@ if ($_POST['submit'] == "Sign In") {
     $FlagSign = "Up";
     $processFlag = true;
     $check1 = "";
+    function isValidEmail($email)
+    {
+        // Remove leading/trailing whitespaces (optional)
+        $email = trim($email);
+
+        // Validate email using filter_var function
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Additional check using a more comprehensive regular expression
+            if (preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $email)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     if (strlen($user) <= 4) {
         $check1 .= "<br>User Name cannot be less than 4 characters!<br>";
         $processFlag = false;
@@ -73,7 +89,12 @@ if ($_POST['submit'] == "Sign In") {
         $check1 .= "<br> Email Address is neeeded to Sign Up! <br>";
         $processFlag = false;
     }
-    /* --DO NOT DELETE MAY NEED IT--
+    $processFlag = isValidEmail($email);
+    if ($processFlag === false){
+        $check1 .= "<br> Please provide a valid Email address! <br>";
+            
+    }
+    /* --DO NOT DELETE MAY NEED IT-- Banned Character check
 
     $barredChar = array('$', '*', '?', '/', '\\', '//', '\\\\', '.', '->');
     foreach ($barredChar as $Char) {

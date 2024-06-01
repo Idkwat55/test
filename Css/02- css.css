@@ -2,6 +2,160 @@
 
 
 
+
+/* Specail Class - For the creator;
+Which is me : Risikesvar G
+
+
+
+
+
+*/
+
+
+/* Common Styles */
+
+.abt-body {
+    background-color: var(--abt-bg);
+    color: var(--text-color);
+    height: 100vh; /* Adjusted height for full viewport height */
+    display: flex;
+    flex-direction: column;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.abt-header {
+    background-color: var(--abt-bg);
+    color: var(--abt-text-color);
+    text-align: center;
+    padding: 20px 0;
+ 
+	font-size: 2.14731rem;
+	font-weight: bolder;
+	transition-duration: 0.9998s;
+}
+
+.abt-main {
+    flex: 1; /* Grow to fill remaining vertical space */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+	transition-duration: 1.1s;
+}
+
+.abt-section {
+    margin-bottom: 40px;
+	transition-duration: 1.2s;
+}
+
+.abt-sign-section {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    right: 20px;
+    margin-bottom: 40px;
+    transition-duration: 1.2s;
+}
+
+.abt-sign-section-content {
+    font-size: 16px;
+    line-height: 1.6;
+    transition-duration: 1.4s;
+    border-radius: 0.5em;
+    background-color: var(--abt-bg-sec);
+    padding: 0.5em;
+}
+
+
+
+.abt-section-heading {
+    color: var(--abt-text-color);
+    font-size: 24px; /* Increased font size for section headings */
+    margin-bottom: 10px; /* Added margin for separation */
+	transition-duration: 1.3s;
+}
+
+.abt-section-content {
+    font-size: 16px; /* Adjusted font size for content */
+    line-height: 1.6; /* Improved readability with increased line height */
+	transition-duration: 1.4s;
+	border-radius: 0.5em;
+	background-color: var(--abt-bg-sec);
+	padding: 0.5em;
+}
+
+ 
+
+
+/* this and 'white' after this used in darkmode effect  */
+.dark {
+	--bg: #333136;
+	--fg: #EAE7F2;
+	--SBC: #d6d6c2;
+	--BoxShaCo: #1c1c1c;
+	--AccBG: #2a292b;
+	--SignInBtnBg: #4b4d4c;
+	--SignInBtnHov: #454945;
+	--SecBtnBg: #ffffff;
+	--SecBtnBgHov: #ffffffd0;
+	--SecBtnCol: black;
+	--SignUpBtnBg: #4b4d4c;
+	--SignInBtnHov: #22b175a2;
+	--SignUpBtnHov: #37a39e;
+	--profileNameBG: #7f668dce;
+	--UPcontainer: black;
+
+--abt-bg: #F5F5F5; /* Background color - Light gray */
+--abt-text-color: #333333; /* Text color - Dark gray */
+--abt-bg-sec: #F5F5F5; /* Secondary background color - Lighter gray */
+
+	/* supposedly for novel list page but not workin */
+}
+
+.light {
+	--bg: #ECF0F1;
+	--fg: #030303;
+	--SBC: #d6d6c2;
+	--BoxShaCo: #97978e;
+	--AccBG: #f0f0f3cc;
+	--SignInBtnBg: #111311;
+	--SignInBtnHov: #000000;
+	--SecBtnBg: #000000;
+	--SecBtnBgHov: #000000c9;
+	--SecBtnCol: white;
+	--SignUpBtnBg: #111311;
+	--SignInBtnHov: #2c8a2caf;
+	--SignUpBtnHov: #3683a7d2;
+	--profileNameBG: rgba(96, 100, 98, 0.685);
+	--UPcontainer: whitesmoke;
+
+
+	--abt-bg: #ECF0FA; /* Background color */
+--abt-text-color: #acdce0ec; /* Text color */
+--abt-bg-sec: #ECF0FA; /* Secondary background color */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Code starts after this ---  
+*/
+
 :root {
 	--acc-sign-blr: #ff8080;
 }
@@ -602,6 +756,16 @@
 	color: inherit;
 }
 
+.vid_tools1 {
+	width: 100%;
+	margin: none;
+	border-radius: inherit;
+
+	display: flex;
+	background-color: inherit;
+	color: inherit;
+}
+
 .font_for_header {
 	font-family: "Helvetica";
 	letter-spacing: 1px;
@@ -762,45 +926,7 @@
 
 
 
-/* this and 'white' after this used in darkmode effect  */
-.dark {
-	--bg: #333136;
-	--fg: #EAE7F2;
-	--SBC: #d6d6c2;
-	--BoxShaCo: #1c1c1c;
-	--AccBG: #2a292b;
-	--SignInBtnBg: #4b4d4c;
-	--SignInBtnHov: #454945;
-	--SecBtnBg: #ffffff;
-	--SecBtnBgHov: #ffffffd0;
-	--SecBtnCol: black;
-	--SignUpBtnBg: #4b4d4c;
-	--SignInBtnHov: #22b175a2;
-	--SignUpBtnHov: #37a39e;
-	--profileNameBG: #7f668dce;
-	--UPcontainer: black;
 
-
-	/* supposedly for novel list page but not workin */
-}
-
-.light {
-	--bg: #ECF0F1;
-	--fg: #030303;
-	--SBC: #d6d6c2;
-	--BoxShaCo: #97978e;
-	--AccBG: #f0f0f3cc;
-	--SignInBtnBg: #111311;
-	--SignInBtnHov: #000000;
-	--SecBtnBg: #000000;
-	--SecBtnBgHov: #000000c9;
-	--SecBtnCol: white;
-	--SignUpBtnBg: #111311;
-	--SignInBtnHov: #2c8a2caf;
-	--SignUpBtnHov: #3683a7d2;
-	--profileNameBG: rgba(96, 100, 98, 0.685);
-	--UPcontainer: whitesmoke;
-}
 
 
 /*   Scroll Bar Customization part  -- START --  */
@@ -1151,18 +1277,7 @@ input:focus {
 	text-decoration: underline;
 }
 
-.creat {
-	margin: 20px;
-	box-shadow: 0 0 15px #7a7a52;
-	height: 300px;
-}
-
-.creat_font_hd {
-	text-align: center;
-
-	font-size: 36;
-}
-
+ 
 .upload {
 	width: 500px;
 	background: #f0f0f0;
@@ -1257,8 +1372,13 @@ input:focus {
 	animation-fill-mode: forwards;
 	padding: 0.5em;
 	margin: 1em;
-	background-color: rgba(245, 50, 50, 0.959);
-	border-radius: 7.5px;
+	/*background-color: rgba(245, 50, 50, 0.959);*/
+	background-color: rgba(128, 128, 128, 0.352);
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgba(245, 50, 50, 0.959);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 
 
 
@@ -1783,4 +1903,222 @@ video::-webkit-media-controls-timeline {
 	font-family: 'Roboto';
 	color: grey;
 	padding: 0.1em;
+}
+
+/*
+@keyframe CommentBoxAni {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+
+	}
+
+	to {
+		width: 100%;
+
+		display: flex;
+
+		background-color: yellow;
+		z-index: 80;
+		opacity: 1;
+		visibility: visible;
+
+
+	}
+
+
+}*/
+
+
+.CommentBox {
+	opacity: 0;
+	width: available;
+	margin: 0;
+	position: relative;
+	visibility: hidden;
+	background-color: inherit;
+	color: inherit;
+	display: flex;
+	padding: 0.5em;
+	flex-wrap: wrap;
+	height: 0px;
+	flex-direction: row;
+	bottom: 0em;
+	animation-timing-function: ease-in-out;
+	animation-duration: 0.5s;
+	z-index: 0;
+	border-radius: 0.45em;
+	animation-fill-mode: forwards;
+	transition-duration: 0.5s;
+}
+
+@keyframes AppearComnt {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		z-index: 0;
+		padding: 0em;
+		bottom: 1em;
+
+	}
+
+	to {
+		bottom: 0em;
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+		z-index: 90;
+		padding: 0.45em;
+
+	}
+}
+
+@keyframes DisappearComnt {
+	from {
+		opacity: 1;
+		padding: 0.45em;
+		bottom: 0em;
+		z-index: 90;
+		height: auto;
+		visibility: visible;
+
+	}
+
+	to {
+		height: 0px;
+		z-index: 0;
+		visibility: hidden;
+		opacity: 0;
+		bottom: 1em;
+		padding: 0em;
+
+	}
+}
+
+.ExpTst {
+	animation: Appear;
+	transition-duration: 0.5s;
+	animation-duration: 0.5s;
+	padding: 0.5em;
+	height: auto;
+	min-height:7em;
+	max-height: 90vh;
+	text-align: center;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border-width: 0.08em;
+	border-radius: 0.45em;
+
+	border-style: solid;
+	border-color: rosybrown;
+	width: 100%;
+	background-color: inherit;
+}
+
+.CommentTools {
+	bottom: 0em;
+	width: 100%;
+	height: auto;
+	position: relative;
+	color: inherit;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0.3em;
+	flex-direction: row;
+	background-color: inherit;
+}
+
+.AddComnt {
+	float: right;
+	padding: 0.2em;
+	outline: none;
+	width: fit-content;
+
+	height: fit-content;
+	border: none;
+
+	background-color: inherit;
+	color: inherit;
+
+	cursor: pointer;
+	border-radius: 0.42em;
+	box-shadow: 0px 0px 0.5em 0px var(--BoxShaCo);
+	margin: 0.3em;
+}
+
+.AddComnt:hover {
+	background-color: var(--SecBtnBgHov);
+	color: var(--SecBtnCol);
+	transition-duration: 0.5s;
+}
+
+.ComntText {
+	width: 100%;
+	position: relative;
+	background-color: rgba(39, 37, 37, 0.838);
+	color: inherit;
+	resize: none;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	margin: 0.3em;
+}
+
+.IndiComnt {
+	width: 100%;
+	margin: auto;
+	background-color: inherit;
+}
+
+.IndiComntIndi {
+	width: 100%;
+	background-color: inherit;
+
+}
+
+.IndiComntAC {
+	position: absolute;
+
+	left: 0em;
+	
+
+	max-width: 60px;
+	text-overflow: ellipsis;
+	width: fit-content;
+	min-width: 2em;
+	min-height: 2em;
+	font-size: smaller;
+}
+
+.IndiComntTime {
+	bottom: 0em;
+	right: 0em;
+	width: fit-content;
+	min-height: 2em;
+
+	position: relative;
+	font-size: smaller;
+}
+
+.IndiComntCreate {
+	
+	right: 0em;
+text-rendering: geometricPrecision;
+	position: absolute;
+	font-size: smaller;
+	max-width: 60px;
+	text-overflow: ellipsis;
+	width: fit-content;
+	min-height: 2em;
+}
+
+.IndiComntTop {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	min-height: 2em;
+	position: relative;
 }

@@ -1,0 +1,20 @@
+{
+    "name": "smlg/jwt",
+    "description": "Jwt for SMLG",
+    "type": "library",
+    "require": {
+        "firebase/php-jwt": "^6.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Smlg\\Jwt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Risi"
+        }
+    ],
+    "minimum-stability": "stable"
+}

@@ -30,7 +30,6 @@ if ($ContineFlg === (false || null)) {
     </script>";
     exit;
 }
-
 ?>
 
 <span id="Go2Top" onclick="bac_2_func()" class="Go2Top icon-keyboard_arrow_up"></span>
@@ -49,11 +48,14 @@ if ($ContineFlg === (false || null)) {
             <span>Recently Viewed</span>
             <div class="RecentViewCont">
                 <div class="RecentViewVid">
-                    This space is originally intendd for recently Viewed videos / media however i , being the goon i am,
-                    failed to realise that this is not YouTube and so there is not need for the recent view , heck there
-                    isn't even a way to
-                    determine what is recently viewed. Thus this place's content is now up for debate.
-                    
+                    This space is originally intended for recently Viewed videos / media however I , being the goon I
+                    am,
+                    failed to realise that this is not YouTube and so there is no need for the recent view , heck there
+                    isn't even a way to determine what is recently viewed(as of writing this). Thus this place's content
+                    is now up for debate.(That brings up the idea -> why not a global forum. You can join or create
+                    chatboxes. Yep thats a nice idea - but the work I would need to do for that is not pleasant to
+                    imagine)
+
 
                 </div>
             </div>

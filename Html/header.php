@@ -61,7 +61,7 @@
 
                                         <label for="title" class="custom-file-input">
                                              <span class="font">Title</span>
-                                             <input type="text" required name="title" class="titleInput" id="title">
+                                             <textarea type="text" required name="title" class="titleInput" id="title"></textarea>
                                         </label>
                                         <input type="submit" id="submit" class="UplBtn" name="submit" value="Upload">
                                         <div class="bar">

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "rrrr"
+AuthUserFile  D:\XAMPPP\htdocs\HTML\Resources\Manga\.htpasswd
+Require valid-user

@@ -4,6 +4,7 @@ function LoadMore() {
     var LoadMore = new XMLHttpRequest();
     LoadMore.onreadystatechange = function () {
         if (LoadMore.status === 200 && LoadMore.readyState === 4) {
+            
             document.getElementById('baseContainer').insertAdjacentHTML('beforeend', this.responseText);
         }
     }

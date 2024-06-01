@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Activity</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+        socket.onmessage = function (event) {
+            const activeUsers = JSON.parse(event.data);
+            console.log('Active Users:', activeUsers);
+        };
+        setInterval(function () {
+            socket.send('activity');
+        }, 2000);
+    </script>
+</head>
+
+<body>
+    <h1>User Activity</h1>
+</body>
+
+</html>

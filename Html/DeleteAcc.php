@@ -12,7 +12,7 @@ $ConfirmedDelAcc = true;
  
 
 <form id="DelDetForm" onsubmit="return false"  >
-
+ 
     <div>
         <label for="UserDelName">User Name:</label>
         <input type="text" autocomplete required id="UserDelName" name="UserDelName">

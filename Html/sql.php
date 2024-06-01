@@ -1,6 +1,6 @@
 <?php
 
-require "C:\\xampp\\SQL CRED (PDO)\\abcxyz.php"; //cred
+require "C:\\D_Drive\\XAMPP_Installation\\xampp\\SQL CRED (PDO)\\abcxyz.php"; //cred
 $tableNameServ = "user_acc_info"; //db tb name
 
 if (!function_exists('DeleteAcc')) {
@@ -39,7 +39,7 @@ if (!function_exists('DeleteAcc')) {
 	}
 }
 
-if (!function_exists('verify')){
+if (!function_exists('verify')) {
 	function verify($servername, $dbname1, $usernameServ, $passwordServ, $tableNameServ, $UsrSubId, $UsrId)
 	{
 		$conn = new PDO("mysql:host=$servername;dbname=$dbname1", $usernameServ, $passwordServ);
@@ -57,7 +57,7 @@ if (!function_exists('verify')){
 
 
 		}
-		 
+
 		$conn = null;
 	}
 }
@@ -69,9 +69,9 @@ try {
 	}
 
 	if (isset($VeriFlg) && $VeriFlg) {
-		
+
 		verify($servername, $dbname1, $usernameServ, $passwordServ, $tableNameServ, $UsrSubId, $UsrId);
-		
+
 	}
 
 } catch (Exception $e) {
@@ -96,7 +96,7 @@ try {
 			$FlagChekstmt = $checkstmt->fetchAll(PDO::FETCH_ASSOC);
 
 			if (count($FlagChekstmt) > 0) {
-				echo "<br>The requested user-name is not available";
+				echo "<br>The requested Username is not available<br>";
 
 			} else {
 
@@ -107,7 +107,7 @@ try {
 				$stmt->bindValue(':email', $email);
 				$stmt->bindParam(':password', $passwordUsr);
 				$stmt->execute();
-				echo "<br>Successfully created your Account<br>";
+				echo "<br>Successfully created your Account!<br>";
 				$SignUpStat = true;
 
 			}
@@ -178,14 +178,14 @@ try {
 
 	} catch (PDOException $e) {
 
-		$tryAgainMsg = "<br> Please try again. If the problem persists contact us. ";
+		$tryAgainMsg = "<br>Please try again. If the problem persists contact us. ";
 
 		if (strpos($e, 'SQLSTATE[HY000] [1049]')) {
 
 			echo '<br>SQL_ERR: 1049 ' . $tryAgainMsg . $e->getMessage();
 
 		} else {
-			echo "<br>CSQ : 101" . $tryAgainMsg . $e->getMessage();
+			echo "<br>CSQ : 101 " . $tryAgainMsg . $e->getMessage();
 		}
 	}
 

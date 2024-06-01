@@ -9,6 +9,7 @@
             <a class="abt_link" href="./about.html"> Sammlung
             </a>
             <i class=" icon-link"></i> &copy 2022
+            
       </p>
 
 </footer>

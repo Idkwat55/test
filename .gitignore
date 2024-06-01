@@ -1,0 +1,88 @@
+# Ignore all picture files in ./Resources/Manga/manga_dump and its subdirectories
+/Resources/Manga/manga_dump/**/*.png
+/Resources/Manga/manga_dump/**/*.jpg
+/Resources/Manga/manga_dump/**/*.jpeg
+/Resources/Manga/manga_dump/**/*.gif
+/Resources/Manga/manga_dump/**/*.bmp
+/Resources/Manga/manga_dump/**/*.tiff
+/Resources/Manga/manga_dump/**/*.webp
+
+
+# Ignore all picture files globally
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# Keep the directory structure and non-picture files
+!/Resources/
+!/Resources/images/
+!/Resources/Manga/
+!/Resources/Movies/
+!/Resources/Novel/
+!/Resources/images/frnt pg/
+!/Resources/images/media/
+!/Resources/images/profile/
+
+# Allow picture files in specific subdirectories
+!/Resources/images/frnt pg/*.png
+!/Resources/images/frnt pg/*.jpg
+!/Resources/images/frnt pg/*.jpeg
+!/Resources/images/frnt pg/*.gif
+!/Resources/images/frnt pg/*.bmp
+!/Resources/images/frnt pg/*.tiff
+!/Resources/images/frnt pg/*.webp
+
+!/Resources/images/media/*.png
+!/Resources/images/media/*.jpg
+!/Resources/images/media/*.jpeg
+!/Resources/images/media/*.gif
+!/Resources/images/media/*.bmp
+!/Resources/images/media/*.tiff
+!/Resources/images/media/*.webp
+
+!/Resources/images/profile/*.png
+!/Resources/images/profile/*.jpg
+!/Resources/images/profile/*.jpeg
+!/Resources/images/profile/*.gif
+!/Resources/images/profile/*.bmp
+!/Resources/images/profile/*.tiff
+!/Resources/images/profile/*.webp
+
+
+
+# Ignore media files globally in the Uploads directory
+/Uploads/**/*.mp4
+/Uploads/**/*.webm
+/Uploads/**/*.mkv
+
+# Keep the directory structure and non-media files
+!/Uploads/
+!/Uploads/css/
+!/Uploads/js/
+!/Uploads/Others/
+!/Uploads/uploads/
+!/Uploads/Videos/
+
+
+# Ignore all files in Education directory and subdirectories
+/Education/**
+
+# Allow the specified directories to be included in the repository
+!/Education/
+!/Education/ECE/
+!/Education/General/
+!/Education/Higher Study/
+!/Education/Revision/
+!/Education/ECE/Beej's Guide to Network Programming/
+!/Education/Revision/11th Physics/
+!/Education/Revision/12th Physics/
+!/Education/Revision/Basic Electronics/
+
+# Ignore all files within these directories
+/Education/*/*
+
+

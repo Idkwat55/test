@@ -1,6 +1,22 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
 
+function formatBytes($bytes, $precision = 2)
+{
+    $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+    $bytes = max($bytes, 0);
+    $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+    $pow = min($pow, count($units) - 1);
+
+    // Calculate the value in the appropriate unit
+    $bytes /= (1 << (10 * $pow));
+
+    return round($bytes, $precision) . ' ' . $units[$pow];
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $okFlg = true;
@@ -14,15 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $allowedExt = ['mp4', 'webp', 'webm', 'jpg', 'jpeg', 'png'];
     $error = [];
-
+    $maxFileSize = 817900000;
+    $maxFileSizeInBytes = formatBytes($maxFileSize, 0);
     if (isset($_FILES['file'])) {
-        if ($fileSize > 111097152) {
+        if ($fileSize > $maxFileSize) {
             $okFlg = false;
-            $error[] = " File size exceeds 22mb ";
+            $error[] = "File size Exceeds " . $maxFileSizeInBytes . "!";
 
         }
         if (!in_array($fileExten, $allowedExt, true)) {
-            $error[] = "File format is not allowed";
+            $error[] = "Chosen file format is not allowed" . "!";
 
         }
         if (empty($error)) {
@@ -36,21 +53,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     include_once "dbsql.php";
                     AddPost((string) $title, (string) $fileName);
 
+                    $response = [
+                        'status' => 'success',
+                        'message' => 'File uploaded successfully!',
+                        'title' => $title,
+                        'fileName' => $fileName
+                    ];
+                    echo json_encode($response);
                 } catch (Exception $err) {
-                    echo "fail" . $err->getMessage();
+                    $response = [
+                        'status' => 'error',
+                        'message' => 'Database error: ' . $err->getMessage()
+                    ];
+                    echo json_encode($response);
                 }
-
-                //header("Location: home-index.php"); // Redirect after successful upload
-
-                exit; // Make sure to exit after the redirect
+                exit;
             } else {
+                $response = [
+                    'status' => 'error',
+                    'message' => '[XS036_1 : I_ErrMovFile(33-57)]'
+                ];
+                echo json_encode($response);
                 exit;
             }
-
         } else {
-            foreach ($error as $err) {
-                echo $err;
-            }
+            $response = [
+                'status' => 'error',
+                'message' => implode(', ', $error)
+            ];
+            echo json_encode($response);
+            exit;
         }
 
     }

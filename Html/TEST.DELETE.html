@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IP Information</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $.get("https://ipinfo.io", function (response) {
+                console.log(response.city, response.country);
+            }, "jsonp");
+        });
+    </script>
+
+    <div class='UPcontainer' id=" <?php echo $loop['VID'] ?>">
+
+        <div class='vid_tools'>
+            <p class='PostTitle'>
+                <?php echo $loop['title'] ?>
+            </p>
+        </div>
+        <video class='UPMcontainer' controls>
+            <source src="<?php echo $dir . $loop['SID'] ?>" type="video/mp4">
+            <source src=" <?php echo $dir . $loop['SID'] ?> " type="video/ogg">
+        </video>
+        <div class='vid_tools'>
+            <i class="icon-thumb_up_off_alt like"></i><i class="icon-thumb_down_off_alt like "></i><i
+                class="icon-comment like "></i>
+        </div>
+    </div>
+</body>
+
+</html>

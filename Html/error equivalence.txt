@@ -2,4 +2,39 @@ SQL PDO :
 SQL.PHP :
 1. SQLERR:1049 -> SQLSTATE[HY000] [1049] ~ no databawse found /
 2.CSQ : 101 -> Custom SQL error ~ Connection failed /
-3. 
+3. XS036_1 : I_ErrMovFile(33-57) ->  ~ upload.php failed to move files to desired location /
+4. XS036_1 : 
+
+
+
+
+Classification of error msg :
+Classic format  = " Error [ Sector - abc : Section - xyz ]"
+Sector = file - origin/info 
+Section = section of code in file
+
+Section code format : 
+ex : "A_BCD(123-987)"
+A - what type of section ( ex : function - F, If_else - I, while - W, Class - C ,T- try, E - except or catch)
+BCD  - A file specifc short identifier , apparent upon browsing through the file quickly, starting must be capitalised, end and middle may be small
+(123-987) - start of section to end of section. May exceed or subseed 3 digits
+
+
+
+
+filename code format : 
+ ex: "XA000_0"
+ X- default null, for fututre use
+ A - info on things like whether the file is primary:P ( runs directly ) or secondary:S (is run from request of another file) 
+000 - file designation/name
+_0 - file type/ format ( ex : php - 1, html - 2, js - 3)
+
+
+Ex :
+if upload.php 
+
+Code for present file names :
+1. dbsql.php [ 452 ] -> XS452_1
+//newer
+
+2.Upload.php [ 036 ] -> XS036_1
